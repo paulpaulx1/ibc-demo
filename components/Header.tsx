@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import styles from "./HeaderButton.module.css";
+
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -65,10 +67,8 @@ export default function Header() {
           </a>
           <a href="#contact">
             <button
-              className={`font-semibold px-5 py-2.5 rounded-md border transition-all duration-300 cursor-pointer ${
-                scrolled
-                  ? "bg-navy text-white border-navy hover:brightness-110 hover:-translate-y-[2px] hover:shadow-md"
-                  : "bg-white/60 text-navy border-navy hover:bg-navy hover:text-white hover:-translate-y-[2px] hover:shadow-md"
+              className={`${styles.button} ${
+                scrolled ? styles.buttonScrolled : styles.buttonTop
               }`}
             >
               Schedule a Consultation

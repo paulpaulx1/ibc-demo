@@ -1,0 +1,40 @@
+.button {
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    /* px-5 py-2.5 */
+    border-radius: 0.375rem;
+    /* rounded-md */
+    border-width: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* --- TOP OF PAGE (not scrolled) --- */
+.buttonTop {
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--navy);
+    border-color: var(--navy);
+}
+
+.buttonTop:hover {
+    background: var(--navy);
+    color: white;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(15, 31, 54, 0.25);
+}
+
+/* --- SCROLLED STATE --- */
+.buttonScrolled {
+    background: white;
+    color: var(--navy);
+    border-color: var(--navy);
+}
+
+.buttonScrolled:hover {
+    background: var(--navy);
+    color: white;
+    border-color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(15, 31, 54, 0.25);
+}
