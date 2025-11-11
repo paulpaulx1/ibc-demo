@@ -1,20 +1,18 @@
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[80vh] flex items-center justify-end text-white bg-cover bg-center"
+      className="relative min-h-[80vh] flex items-center justify-start text-white bg-cover"
       style={{
         backgroundImage: "url('/hero-image.jpg')",
-        transform: "scaleX(-1)", // mirror background so plant faces text
+        backgroundPosition: "50px center", // ensure even overflow
+        backgroundAttachment: "scroll",
       }}
     >
       {/* gradient overlay (dark on LEFT, light on right) */}
-      <div className="absolute inset-0 bg-gradient-to-l from-[rgba(15,31,54,0.85)] via-[rgba(15,31,54,0.65)] to-[rgba(15,31,54,0.2)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(15,31,54,0.85)] via-[rgba(15,31,54,0.65)] to-[rgba(15,31,54,0.2)]" />
 
       {/* text content */}
-      <div
-        className="relative z-10 max-w-3xl px-6 md:px-12 text-left"
-        style={{ transform: "scaleX(-1)" }} // flip text back to normal
-      >
+      <div className="relative z-10 max-w-3xl px-6 md:px-12 text-left">
         <p className="uppercase tracking-[0.15em] text-accent text-sm mb-3">
           Certified Public Accountant
         </p>
