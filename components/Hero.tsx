@@ -4,7 +4,7 @@ export default function Hero() {
       className="relative min-h-[80vh] flex items-center justify-start text-white bg-cover"
       style={{
         backgroundImage: "url('/hero-image.jpg')",
-        backgroundPosition: "50px center", // ensure even overflow
+        backgroundPosition: "60px center", // ensure even overflow
         backgroundAttachment: "scroll",
       }}
     >
