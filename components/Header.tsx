@@ -68,7 +68,7 @@ export default function Header() {
               className={`font-semibold px-5 py-2.5 rounded-md transition border ${
                 scrolled
                   ? "bg-navy text-white border-navy hover:brightness-110"
-                  : "bg-white/50 text-navy border-navy hover:bg-navy hover:text-white"
+                  : "bg-white/60 text-navy border-navy hover:bg-navy hover:text-white"
               }`}
             >
               Schedule a Consultation
