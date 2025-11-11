@@ -65,10 +65,10 @@ export default function Header() {
           </a>
           <a href="#contact">
             <button
-              className={`font-semibold px-5 py-2.5 rounded-md transition border ${
+              className={`font-semibold px-5 py-2.5 rounded-md border transition-all duration-300 cursor-pointer ${
                 scrolled
-                  ? "bg-navy text-white border-navy hover:brightness-110"
-                  : "bg-white/60 text-navy border-navy hover:bg-navy hover:text-white"
+                  ? "bg-navy text-white border-navy hover:brightness-110 hover:-translate-y-[2px] hover:shadow-md"
+                  : "bg-white/60 text-navy border-navy hover:bg-navy hover:text-white hover:-translate-y-[2px] hover:shadow-md"
               }`}
             >
               Schedule a Consultation
