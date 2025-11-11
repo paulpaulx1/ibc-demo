@@ -1,0 +1,48 @@
+.serviceCard {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.serviceCard:hover {
+  background-color: var(--navy, #1a365d);
+  border-color: var(--navy, #1a365d);
+  transform: translateY(-4px);
+}
+
+.iconWrapper {
+  background-color: var(--navy, #1a365d);
+  border: 2px solid var(--navy, #1a365d);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  color: white;
+  width: 36px;
+  height: 36px;
+}
+
+.serviceCard:hover .iconWrapper {
+  background-color: white;
+  border-color: white;
+}
+
+.serviceCard:hover .icon {
+  color: var(--navy, #1a365d);
+}
+
+.serviceCard:hover .title {
+  color: white;
+}
+
+.serviceCard:hover .description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.serviceCard:hover .learnMore {
+  color: white;
+}
