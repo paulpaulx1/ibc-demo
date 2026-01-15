@@ -1,10 +1,12 @@
+import styles from "./Hero.module.css";
+
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[80vh] flex items-center justify-start text-white bg-cover"
+      className={`${styles.hero} relative min-h-[80vh] flex items-center justify-start text-white bg-cover`}
       style={{
         backgroundImage: "url('/hero-image.jpg')",
-        backgroundPosition: "60px center", // ensure even overflow
+        backgroundPosition: "60px center",
         backgroundAttachment: "scroll",
       }}
     >
