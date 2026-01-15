@@ -20,14 +20,15 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 ${styles.logo} w-full z-50 transition-all duration-300 ${
-        scrolled ? "backdrop-blur bg-white/90 shadow-sm" : ""
+      className={`fixed top-0 ${styles.logo} w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur shadow-sm ${
+        scrolled ? "" : "md:bg-transparent md:shadow-none"
       }`}
     >
       <div className="container flex items-center justify-between py-4 md:py-5">
@@ -36,20 +37,27 @@ export default function Header() {
           href="#"
           className={`block h-30 relative ${scrolled ? styles.logoScrolled : ""}`}
         >
+          {/* WHITE logo — desktop only */}
           <Image
             src="/SMG Full Logo.png"
             alt="SMG Accounting & Tax Advisors, LLC"
             height={32}
             width={200}
-            className={`h-full w-auto ${styles.logoWhite}`}
+            className={`h-full w-auto hidden md:block transition-opacity duration-300 ${
+              scrolled ? "opacity-0" : "opacity-100"
+            }`}
             priority
           />
+
+          {/* NAVY logo — ALWAYS visible on mobile (normal flow), overlays on desktop */}
           <Image
             src="/SMG Full Logo.png"
             alt="SMG Accounting & Tax Advisors, LLC"
             height={32}
             width={200}
-            className={`h-full w-auto absolute top-0 left-0 ${styles.logoNavy}`}
+            className={`h-full w-auto block md:absolute md:top-0 md:left-0 transition-opacity duration-300 ${
+              scrolled ? "md:opacity-100" : "md:opacity-0"
+            }`}
             style={{
               filter:
                 "brightness(0) saturate(100%) invert(10%) sepia(28%) saturate(2076%) hue-rotate(195deg) brightness(95%) contrast(95%)",
@@ -79,11 +87,7 @@ export default function Header() {
             </button>
 
             {servicesOpen && (
-              <div
-                className={`absolute top-full left-0 w-72 rounded-lg shadow-xl ${
-                  scrolled ? "bg-white" : "bg-white"
-                } border border-gray-200 py-2`}
-              >
+              <div className="absolute top-full left-0 w-72 rounded-lg shadow-xl bg-white border border-gray-200 py-2">
                 {servicesLinks.map((service) => (
                   <a
                     key={service.title}
@@ -114,14 +118,10 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle: ALWAYS navy */}
         <button
           onClick={() => setOpen(!open)}
-          className={`md:hidden border rounded-md p-2 transition-colors ${
-            scrolled
-              ? "border-muted text-navy"
-              : "border-white/60 text-white/80"
-          }`}
+          className="md:hidden border border-navy text-navy rounded-md p-2 transition-colors"
           aria-label="Toggle menu"
         >
           ☰
@@ -130,11 +130,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div
-          className={`md:hidden transition ${
-            scrolled ? "bg-white text-navy" : "bg-navy/95 text-white"
-          } border-t border-muted shadow-sm`}
-        >
+        <div className="md:hidden bg-white text-navy border-t border-gray-200 shadow-sm">
           <nav className="flex flex-col items-start px-6 py-4 space-y-3">
             {/* Mobile Services Dropdown */}
             <div className="w-full">

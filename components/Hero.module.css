@@ -1,7 +1,6 @@
 @media (max-width: 768px) {
     .hero {
-        /* Reset on desktop - looks fine as-is */
-        padding-top: 5rem;
+        padding-top: 8rem;
         background-position: -435px center !important;
     }
 }
