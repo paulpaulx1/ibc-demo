@@ -46,3 +46,133 @@
 .serviceCard:hover .learnMore {
   color: white;
 }
+
+.serviceCard {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.serviceCard:hover {
+  background-color: var(--navy, #1a365d);
+  border-color: var(--navy, #1a365d);
+  transform: translateY(-4px);
+}
+
+.cardBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  z-index: 0;
+}
+
+.serviceCard:hover .cardBackground {
+  opacity: 0.15;
+}
+
+.iconWrapper {
+  background-color: var(--navy, #1a365d);
+  border: 2px solid var(--navy, #1a365d);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  color: white;
+  width: 36px;
+  height: 36px;
+}
+
+.serviceCard:hover .iconWrapper {
+  background-color: white;
+  border-color: white;
+}
+
+.serviceCard:hover .icon {
+  color: var(--navy, #1a365d);
+}
+
+.serviceCard:hover .title {
+  color: white;
+}
+
+.serviceCard:hover .description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.serviceCard:hover .learnMore {
+  color: white;
+}
+
+.serviceCard {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.serviceCard:hover {
+  background-color: var(--navy, #1a365d);
+  border-color: var(--navy, #1a365d);
+  transform: translateY(-4px);
+}
+
+.cardBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.6s ease;
+  transform: scale(1);
+  z-index: 0;
+}
+
+.serviceCard:hover .cardBackground {
+  opacity: 0.15;
+  transform: scale(1.2);
+}
+
+.iconWrapper {
+  background-color: var(--navy, #1a365d);
+  border: 2px solid var(--navy, #1a365d);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  color: white;
+  width: 36px;
+  height: 36px;
+}
+
+.serviceCard:hover .iconWrapper {
+  background-color: white;
+  border-color: white;
+}
+
+.serviceCard:hover .icon {
+  color: var(--navy, #1a365d);
+}
+
+.serviceCard:hover .title {
+  color: white;
+}
+
+.serviceCard:hover .description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.serviceCard:hover .learnMore {
+  color: white;
+}

@@ -6,6 +6,7 @@ import {
   TrendingUp,
   Landmark,
 } from "lucide-react";
+import Image from "next/image";
 import styles from "./ServicesGrid.module.css";
 
 const services = [
@@ -62,9 +63,14 @@ export default function ServicesGrid() {
           {services.map(({ title, description, icon: Icon }) => (
             <article
               key={title}
-              className={`${styles.serviceCard} group border border-muted rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-xl`}
+              className={`${styles.serviceCard} group border border-muted rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-xl relative overflow-hidden`}
             >
-              <div className="flex flex-col items-start h-full">
+              {/* Background Image */}
+              <div className={styles.cardBackground}>
+                <Image src="/graph.jpg" alt="" fill className="object-cover" />
+              </div>
+
+              <div className="flex flex-col items-start h-full relative z-10">
                 <div
                   className={`${styles.iconWrapper} rounded-2xl transition-all duration-300 mb-6`}
                 >
