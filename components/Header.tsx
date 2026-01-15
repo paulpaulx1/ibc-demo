@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 ${styles.logo} w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur shadow-sm ${
+      className={`fixed top-0 ${styles.logo} w-full z-50 transition-all duration-300 bg-white/90 shadow-sm ${
         scrolled ? "" : "md:bg-transparent md:shadow-none"
       }`}
     >
