@@ -23,6 +23,7 @@ export default function Header() {
   const isServicesPage =
     pathname.startsWith("/services") ||
     pathname.startsWith("/about") ||
+    pathname.startsWith("/contact") ||
     pathname.startsWith("/resources");
 
   const [scrolled, setScrolled] = useState(false);
@@ -142,7 +143,7 @@ export default function Header() {
           >
             Resources
           </a>
-          <a href="/#contact" className={styles.navItem}>
+          <a href="/contact" className={styles.navItem}>
             <button
               type="button"
               className={`${styles.button} ${
@@ -218,7 +219,7 @@ export default function Header() {
               Resources
             </a>
             <a
-              href="/#contact"
+              href="/contact"
               className={`font-semibold px-5 py-2.5 rounded-md inline-block ${
                 headerScrolled
                   ? "bg-navy text-white"

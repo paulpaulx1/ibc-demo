@@ -322,7 +322,7 @@ export default function ResourcesPage() {
               support, or strategic financial guidance specific to your
               business, let's talk.
             </p>
-            <a href="/#contact" className={styles.ctaButton}>
+            <a href="/contact" className={styles.ctaButton}>
               Schedule a Consultation
             </a>
           </div>

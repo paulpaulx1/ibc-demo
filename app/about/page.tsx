@@ -235,7 +235,7 @@ export default function AboutPage() {
               Let's discuss how SMG's experience and strategic approach can
               support your business goals.
             </p>
-            <a href="/#contact" className={styles.ctaButton}>
+            <a href="/contact" className={styles.ctaButton}>
               Schedule a Free Consultation
             </a>
           </div>

@@ -48,7 +48,7 @@ export default function Hero() {
         <div className={`${styles.heroCtas} flex gap-4 flex-wrap`}>
           {/* Primary CTA */}
           <a
-            href="#contact"
+            href="contact"
             className="bg-accent text-white font-semibold px-6 py-3 rounded-md border border-transparent shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-[2px] hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
           >
             Schedule a Consultation

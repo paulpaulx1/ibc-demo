@@ -52,7 +52,7 @@ export default function AboutSection() {
 
             <div className={`${styles.ctas} mt-8 flex gap-4 flex-wrap`}>
               <a
-                href="#contact"
+                href="contact"
                 className="bg-navy text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 hover:brightness-110 hover:-translate-y-[2px] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/40"
               >
                 Schedule a Consultation

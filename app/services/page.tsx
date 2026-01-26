@@ -70,7 +70,7 @@ export default function ServicesPage() {
               to strategic CFO services and healthcare finance advisory—backed
               by 24+ years of experience.
             </p>
-            <a href="#contact" className={styles.primaryCta}>
+            <a href="contact" className={styles.primaryCta}>
               Schedule a Consultation
             </a>
           </div>
@@ -508,7 +508,7 @@ export default function ServicesPage() {
               Let's discuss which services can best support your business goals
               and financial needs.
             </p>
-            <a href="#contact" className={styles.ctaButton}>
+            <a href="contact" className={styles.ctaButton}>
               Schedule a Free Consultation
             </a>
           </div>
