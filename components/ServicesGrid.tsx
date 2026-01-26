@@ -1,69 +1,112 @@
+"use client";
+
 import {
   Calculator,
-  FileSpreadsheet,
-  Lightbulb,
-  PiggyBank,
+  BookOpen,
+  FileCheck,
   TrendingUp,
-  Landmark,
+  Hospital,
+  Handshake,
 } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import styles from "./ServicesGrid.module.css";
 
 const services = [
   {
+    title: "Accounting Services",
+    description:
+      "Comprehensive accounting solutions for businesses and nonprofits—from financial statement preparation to multi-entity management and regulatory compliance.",
+    icon: Calculator,
+    href: "/services#accounting",
+  },
+  {
+    title: "Bookkeeping Services",
+    description:
+      "Professional monthly bookkeeping with CPA oversight—accurate reconciliation, organized records, and financial clarity for confident decision-making.",
+    icon: BookOpen,
+    href: "/services#bookkeeping",
+  },
+  {
     title: "Tax Preparation & Planning",
     description:
-      "Federal and state filings, estimated payments, and proactive strategies to minimize surprises.",
-    icon: Calculator,
+      "Strategic tax planning and preparation for individuals, businesses, and nonprofits—minimizing liability while ensuring full federal and state compliance.",
+    icon: FileCheck,
+    href: "/services#tax-planning",
   },
   {
-    title: "Accounting & Bookkeeping",
+    title: "CFO & Financial Planning",
     description:
-      "Monthly close, financial statements, payroll coordination, and catch-up projects.",
-    icon: FileSpreadsheet,
-  },
-  {
-    title: "Advisory for Small Businesses",
-    description:
-      "Entity selection, budgeting, and cash-flow guidance as your organization grows.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Nonprofit Compliance",
-    description:
-      "Form 990 preparation, restricted fund tracking, and audit-ready financial reporting.",
-    icon: Landmark,
-  },
-  {
-    title: "Financial Forecasting",
-    description:
-      "Scenario modeling and KPI dashboards to support confident decision-making.",
+      "Fractional CFO services and strategic planning for growing organizations—executive-level guidance, forecasting, and capital planning without the full-time cost.",
     icon: TrendingUp,
+    href: "/services/services#cfo-services",
   },
   {
-    title: "Individual Planning",
+    title: "Healthcare Finance Advisory",
     description:
-      "Tax-efficient personal strategies for business owners and independent professionals.",
-    icon: PiggyBank,
+      "Specialized financial leadership for behavioral health and healthcare organizations—CARF compliance, payor contract analysis, and regulatory expertise.",
+    icon: Hospital,
+    href: "/services#healthcare-finance",
+  },
+  {
+    title: "Business Advisory & M&A",
+    description:
+      "Strategic guidance for business transitions, acquisitions, and exits—informed by real experience buying, scaling, and successfully selling a professional services firm.",
+    icon: Handshake,
+    href: "/services#business-advisory",
   },
 ];
 
 export default function ServicesGrid() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+        rootMargin: "0px 0px -100px 0px", // Start slightly before it comes into view
+      },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="services" className="py-20 bg-soft">
+    <section id="services" className="py-20 bg-soft" ref={sectionRef}>
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="h1 text-navy mb-2">Services</h2>
-          <p className="section-lead">
-            Practical expertise to keep your finances clear and compliant.
+          <h2
+            className={`h1 text-navy mb-2 ${isVisible ? styles.headingVisible : styles.heading}`}
+          >
+            Services
+          </h2>
+          <p
+            className={`section-lead ${isVisible ? styles.subheadingVisible : styles.subheading}`}
+          >
+            Comprehensive financial solutions for Indianapolis businesses,
+            healthcare organizations, and nonprofits.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ title, description, icon: Icon }) => (
+          {services.map(({ title, description, icon: Icon, href }) => (
             <article
               key={title}
-              className={`${styles.serviceCard} group border border-muted rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-xl relative overflow-hidden`}
+              className={`${styles.serviceCard} ${isVisible ? styles.visible : ""} group border border-muted rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-xl relative overflow-hidden`}
             >
               {/* Background Image */}
               <div className={styles.cardBackground}>
@@ -89,7 +132,7 @@ export default function ServicesGrid() {
                   {description}
                 </p>
                 <a
-                  href="#contact"
+                  href={href}
                   className={`${styles.learnMore} text-navy font-medium underline transition-colors duration-300`}
                 >
                   Learn More

@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import Band from "@/components/Band";
 import Resources from "@/components/Resources";
 import About from "../components/About";
@@ -13,6 +12,7 @@ export default function HomePage() {
     <>
       <Header />
       <Hero />
+      <About />
       <ServicesGrid />
       <Band />
       {/* <Resources />

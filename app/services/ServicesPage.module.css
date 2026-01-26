@@ -1,0 +1,464 @@
+/* Hero animations */
+@keyframes heroBackgroundZoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes heroOverlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroContentFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Service section animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.page {
+    padding-top: 160px;
+}
+
+/* Hero */
+.hero {
+    padding: 6rem 0 6rem;
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.bgImage {
+    object-fit: cover;
+    object-position: right center;
+    z-index: 0;
+    animation: heroBackgroundZoom 1.2s ease-out;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+    animation: heroOverlayFade 0.8s ease-out;
+}
+
+.heroInner {
+    max-width: 52rem;
+    position: relative;
+    z-index: 2;
+}
+
+.h1 {
+    font-size: clamp(2.25rem, 2.8vw + 1.25rem, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--navy, #1e3a5f);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-serif, ui-serif, Georgia, serif);
+    animation: heroContentFadeUp 0.8s ease-out 0.2s both;
+}
+
+.lede {
+    font-size: 1.25rem;
+    line-height: 1.65;
+    color: #1e293b;
+    margin-bottom: 1.75rem;
+    max-width: 46rem;
+    animation: heroContentFadeUp 0.8s ease-out 0.4s both;
+}
+
+.primaryCta {
+    display: inline-block;
+    background: var(--navy, #1e3a5f);
+    color: white;
+    font-weight: 600;
+    padding: 0.95rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background 180ms ease, transform 180ms ease;
+    text-decoration: none;
+    animation: heroContentFadeUp 0.8s ease-out 0.6s both;
+}
+
+.primaryCta:hover {
+    background: #0f2a49;
+    transform: translateY(-1px);
+}
+
+/* Service sections */
+.service {
+    padding: 5rem 0;
+    scroll-margin-top: 160px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: none;
+}
+
+.service:nth-child(even) {
+    background: var(--soft, #f7f5f2);
+}
+
+.service:nth-child(odd) {
+    background: white;
+}
+
+.service.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Service grid layout */
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.serviceContent {
+  max-width: 100%;
+}
+
+.serviceImage {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.serviceImg {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service:hover .serviceImg {
+  transform: scale(1.05);
+}
+
+/* Staggered content animations */
+.service.visible .serviceIcon {
+    animation: scaleIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.service.visible .h2 {
+    animation: slideInLeft 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.service.visible .body:nth-of-type(1) {
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.service.visible .body:nth-of-type(2) {
+    animation: fadeInUp 0.6s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+.service.visible .serviceList {
+    animation: fadeInUp 0.6s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.service.visible .serviceItem {
+    animation: slideInLeft 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+.service.visible .serviceItem:nth-child(1) { animation-delay: 0.7s; }
+.service.visible .serviceItem:nth-child(2) { animation-delay: 0.8s; }
+.service.visible .serviceItem:nth-child(3) { animation-delay: 0.9s; }
+.service.visible .serviceItem:nth-child(4) { animation-delay: 1s; }
+.service.visible .serviceItem:nth-child(5) { animation-delay: 1.1s; }
+
+.service.visible .serviceImage {
+    animation: slideInRight 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.serviceIcon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--navy, #1e3a5f);
+    color: white;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--navy, #1e3a5f);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: var(--font-serif, ui-serif, Georgia, serif);
+}
+
+.body {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    font-size: 1.0625rem;
+}
+
+.serviceList {
+    margin: 1.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.serviceItem {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.checkIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--navy, #1e3a5f);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+/* Credibility bar */
+.credibility {
+    padding: 3rem 0;
+    background: var(--navy, #1e3a5f);
+    opacity: 0;
+}
+
+.credibility.credVisible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.credibility.credVisible .credItem {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.credibility.credVisible .credItem:nth-child(1) { animation-delay: 0.2s; }
+.credibility.credVisible .credItem:nth-child(2) { animation-delay: 0.3s; }
+.credibility.credVisible .credItem:nth-child(3) { animation-delay: 0.4s; }
+
+.credGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.credItem {
+    text-align: center;
+}
+
+.credNumber {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent, #d4a574);
+    margin-bottom: 0.5rem;
+}
+
+.credLabel {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* CTA */
+.cta {
+    padding: 4.5rem 0;
+    background: white;
+    opacity: 0;
+}
+
+.cta.ctaVisible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.cta.ctaVisible .h2 {
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.cta.ctaVisible .body {
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.cta.ctaVisible .ctaButton {
+    animation: scaleIn 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.ctaInner {
+    max-width: 40rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.ctaButton {
+    display: inline-block;
+    background: var(--navy, #1e3a5f);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: background 180ms ease, transform 180ms ease;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.ctaButton:hover {
+    background: #0f2a49;
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero::before {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.85) 100%);
+    }
+}
+
+@media (max-width: 968px) {
+  .serviceGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .serviceImage {
+    height: 350px;
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 0 4rem;
+        background-position: 65% center;
+    }
+
+    .hero::before {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .lede {
+        font-size: 1.125rem;
+    }
+
+    .service {
+        padding: 3.5rem 0;
+    }
+
+    .credGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cta {
+        padding: 3.5rem 0;
+    }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .bgImage,
+  .hero::before,
+  .h1,
+  .lede,
+  .primaryCta,
+  .service.visible,
+  .service.visible .serviceIcon,
+  .service.visible .h2,
+  .service.visible .body,
+  .service.visible .serviceList,
+  .service.visible .serviceItem,
+  .service.visible .serviceImage,
+  .credibility.credVisible,
+  .credibility.credVisible .credItem,
+  .cta.ctaVisible,
+  .cta.ctaVisible .h2,
+  .cta.ctaVisible .body,
+  .cta.ctaVisible .ctaButton {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .service:hover .serviceImg {
+    transform: none;
+  }
+}

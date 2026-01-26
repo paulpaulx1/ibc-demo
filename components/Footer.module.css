@@ -6,7 +6,7 @@
 .container {
   padding-top: 4rem; /* 64px */
   padding-bottom: 4rem;
-  padding-left:3rem;
+  padding-left: 3rem;
 }
 
 .grid {
@@ -29,6 +29,12 @@
 
 .brand {
   margin-bottom: 1.5rem;
+}
+
+.brand img {
+  filter: brightness(0) invert(1);
+  height: 8rem !important; /* ~48px */
+  width: auto !important;
 }
 
 .heading {
@@ -89,7 +95,7 @@
 .bottomBar {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 3rem;
-  padding-top: 1.5rem; /* tightened */
+  padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,9 +104,18 @@
   font-size: 0.875rem;
 }
 
+.bottomBar blockquote {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 @media (min-width: 768px) {
   .bottomBar {
     flex-direction: row;
     justify-content: space-between;
+  }
+  
+  .bottomBar blockquote {
+    font-size: 1.125rem;
   }
 }

@@ -4,32 +4,48 @@ export default function Hero() {
   return (
     <section
       className={`${styles.hero} relative min-h-[80vh] flex items-center justify-start text-white bg-cover`}
-      style={{
-        backgroundImage: "url('/hero-image.jpg')",
-        backgroundPosition: "60px center",
-        backgroundAttachment: "scroll",
-      }}
     >
+      {/* Background image with zoom animation */}
+      <div
+        className={`${styles.heroBackground} absolute inset-0 bg-cover`}
+        style={{
+          backgroundImage: "url('/hero-image.jpg')",
+          backgroundPosition: "60px center",
+          backgroundAttachment: "scroll",
+        }}
+      />
+
       {/* gradient overlay (dark on LEFT, light on right) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(15,31,54,0.85)] via-[rgba(15,31,54,0.65)] to-[rgba(15,31,54,0.2)]" />
+      <div
+        className={`${styles.heroOverlay} absolute inset-0 bg-gradient-to-r from-[rgba(15,31,54,0.85)] via-[rgba(15,31,54,0.65)] to-[rgba(15,31,54,0.2)]`}
+      />
 
       {/* text content */}
       <div className="relative z-10 max-w-3xl px-6 md:px-12 text-left">
-        <p className="uppercase tracking-[0.15em] text-accent text-sm mb-3">
-          Certified Public Accountant
+        <p
+          className={`${styles.heroEyebrow} uppercase tracking-[0.15em] text-accent text-sm mb-3`}
+        >
+          Indianapolis CPA Firm
         </p>
 
-        <h1 className="font-serif text-4xl md:text-5xl leading-tight mb-6">
-          Financial clarity for small businesses and nonprofits.
-          <span className="block h-[3px] w-20 bg-accent mt-4 rounded" />
+        <h1
+          className={`${styles.heroHeading} font-serif text-4xl md:text-5xl leading-tight mb-6`}
+        >
+          Accounting, tax, and bookkeeping for Indianapolis small businesses and
+          nonprofits.
+          <span
+            className={`${styles.heroAccent} block h-[3px] w-20 bg-accent mt-4 rounded`}
+          />
         </h1>
 
-        <p className="text-lg text-slate-200 mb-10 max-w-xl">
-          Trusted tax, accounting, and advisory services grounded in integrity
-          and stewardship.
+        <p
+          className={`${styles.heroSubheading} text-lg text-slate-200 mb-10 max-w-xl`}
+        >
+          Clear reporting, proactive tax planning, and steady financial
+          guidance— grounded in integrity and long-term stewardship.
         </p>
 
-        <div className="flex gap-4 flex-wrap">
+        <div className={`${styles.heroCtas} flex gap-4 flex-wrap`}>
           {/* Primary CTA */}
           <a
             href="#contact"
