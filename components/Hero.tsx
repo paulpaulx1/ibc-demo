@@ -21,9 +21,9 @@ export default function Hero() {
       />
 
       {/* text content */}
-      <div className="relative z-10 max-w-3xl px-6 md:px-12 text-left">
+      <div className={`${styles.heroText} relative z-10 max-w-3xl px-6 md:px-12 text-left`}>
         <p
-          className={`${styles.heroEyebrow} uppercase tracking-[0.15em] text-accent text-sm mb-3 mt-3`}
+          className={`${styles.heroEyebrow} uppercase tracking-[0.15em] text-accent text-sm mb-3`}
         >
           Indianapolis CPA Firm
         </p>
