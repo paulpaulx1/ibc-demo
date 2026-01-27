@@ -53,7 +53,7 @@ export async function POST(request: Request) {
         <p>In the meantime, feel free to reach us directly at:</p>
         <ul>
           <li>Email: ${process.env.EMAIL_TO || "scott@smgaccounting.com"}</li>
-          <li>Phone: (317) 555-1234</li>
+          <li>Phone: 317-752-8649</li>
         </ul>
         <p>Best regards,<br>Scott Geans, CPA<br>SMG Accounting & Tax Advisors, LLC</p>
       `,

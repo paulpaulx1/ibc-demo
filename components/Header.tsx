@@ -49,8 +49,8 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 ${styles.logo} w-full z-50 transition-all duration-300 bg-white/90 shadow-sm ${
-        headerScrolled ? "" : "md:bg-transparent md:shadow-none"
-      }`}
+        headerScrolled ? styles.headerScrolled : ""
+      } ${headerScrolled ? "" : "md:bg-transparent md:shadow-none"}`}
     >
       <div className="container flex items-center justify-between py-4 md:py-5">
         {/* Brand */}

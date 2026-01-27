@@ -1,33 +1,36 @@
 /* Base animations */
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .logo {
@@ -57,10 +60,21 @@
     animation-fill-mode: both;
 }
 
-.navItem:nth-child(1) { animation-delay: 0.1s; }
-.navItem:nth-child(2) { animation-delay: 0.2s; }
-.navItem:nth-child(3) { animation-delay: 0.3s; }
-.navItem:nth-child(4) { animation-delay: 0.4s; }
+.navItem:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.navItem:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.navItem:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.navItem:nth-child(4) {
+    animation-delay: 0.4s;
+}
 
 /* Dropdown menu animation */
 .dropdown {
@@ -85,10 +99,21 @@
     animation-fill-mode: both;
 }
 
-.mobileMenuItem:nth-child(1) { animation-delay: 0.05s; }
-.mobileMenuItem:nth-child(2) { animation-delay: 0.1s; }
-.mobileMenuItem:nth-child(3) { animation-delay: 0.15s; }
-.mobileMenuItem:nth-child(4) { animation-delay: 0.2s; }
+.mobileMenuItem:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.mobileMenuItem:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.mobileMenuItem:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.mobileMenuItem:nth-child(4) {
+    animation-delay: 0.2s;
+}
 
 .button {
     font-weight: 600;
@@ -148,6 +173,36 @@ button:focus-visible {
 /* For scrolled state, use darker outline */
 .logoScrolled:focus,
 .logoScrolled:focus-visible {
+    outline: 2px solid rgba(15, 31, 54, 0.8);
+    outline-offset: 5px;
+}
+
+/* Default focus outlines - WHITE (for transparent header at top of home) */
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 5px;
+}
+
+.logo:focus,
+.logo:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 5px;
+}
+
+/* NAVY focus outlines when scrolled or on other pages */
+.headerScrolled a:focus,
+.headerScrolled a:focus-visible,
+.headerScrolled button:focus,
+.headerScrolled button:focus-visible {
+    outline: 2px solid rgba(15, 31, 54, 0.8);
+    outline-offset: 5px;
+}
+
+.headerScrolled .logo:focus,
+.headerScrolled .logo:focus-visible {
     outline: 2px solid rgba(15, 31, 54, 0.8);
     outline-offset: 5px;
 }

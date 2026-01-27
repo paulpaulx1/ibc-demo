@@ -10,15 +10,17 @@ const baskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  title: "Integrity Business Consulting, LLC — CPA & Advisory",
+  title: "SMG Accounting & Tax Advisors — CPA Firm in Indianapolis",
   description:
-    "Trusted CPA and advisory services for small businesses, nonprofits, and individuals.",
+    "Trusted Indianapolis CPA firm offering accounting, tax preparation, bookkeeping, and CFO advisory for small businesses, nonprofits, and healthcare organizations.",
   openGraph: {
-    title: "Integrity Business Consulting, LLC — CPA & Advisory",
+    title:
+      "SMG Accounting & Tax Advisors — Indianapolis CPA & Advisory Services",
     description:
-      "Trusted CPA and advisory services for small businesses, nonprofits, and individuals.",
+      "Expert accounting, tax planning, bookkeeping, and financial advisory services for Indianapolis businesses and nonprofits. Led by Scott Geans, CPA, MPA.",
     images: ["/og-image.png"],
   },
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({

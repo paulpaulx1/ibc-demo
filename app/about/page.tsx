@@ -7,7 +7,7 @@ import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
-    new Set()
+    new Set(),
   );
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
       {
         threshold: 0.15,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     Object.values(sectionRefs.current).forEach((ref) => {
@@ -84,6 +84,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
+      {/* Story */}
       <section
         className={`${styles.story} ${
           visibleSections.has("story") ? styles.visible : ""
@@ -92,41 +93,54 @@ export default function AboutPage() {
         ref={setSectionRef("story")}
       >
         <div className="container">
-          <div className={styles.storyInner}>
-            <h2 className={styles.h2}>
-              Experience That Goes Beyond Tax Returns
-            </h2>
+          <div className={styles.storyGrid}>
+            {/* LEFT column: text */}
+            <div className={styles.storyText}>
+              <h2 className={styles.h2}>
+                Experience That Goes Beyond Tax Returns
+              </h2>
 
-            <p className={styles.body}>
-              Most CPAs can prepare tax returns and manage books. What makes SMG
-              different is the depth of experience behind every
-              engagement—experience from banking, Fortune 500 leadership,
-              entrepreneurship, and healthcare operations.
-            </p>
+              <p className={styles.body}>
+                Most CPAs can prepare tax returns and manage books. What sets
+                SMG apart is the depth of experience behind every
+                engagement—experience shaped by commercial banking, Fortune 500
+                leadership, entrepreneurship, and complex healthcare operations.
+              </p>
 
-            <p className={styles.body}>
-              After starting in commercial banking and earning my CPA and MPA
-              from IU Kelley School of Business, I spent years in progressively
-              senior financial roles—from the Indiana State Budget Agency
-              managing the $1.1 billion DCS budget, to Eli Lilly managing $450
-              million in operating budgets and serving as Controller for their
-              $120 million global health initiative.
-            </p>
+              <p className={styles.body}>
+                After beginning my career in banking and earning my CPA and MPA
+                from the IU Kelley School of Business, I held progressively
+                senior financial roles—from managing a $1.1 billion
+                public-sector budget at the Indiana State Budget Agency to
+                leading $450 million in operating budgets at Eli Lilly and
+                serving as Controller for a $120 million global health
+                initiative.
+              </p>
 
-            <p className={styles.body}>
-              In 2010, I acquired a professional services firm and spent nine
-              years building it into a thriving operation before successfully
-              selling the business in 2019 for more than twice the purchase
-              price. That experience—actually walking the path of buying,
-              scaling, and exiting a business—informs how I serve clients today.
-            </p>
+              <p className={styles.body}>
+                I later acquired and scaled a professional services firm,
+                successfully selling the business in 2019 for more than twice
+                the original purchase price. Most recently, I served as CFO for
+                a multi-entity behavioral health organization, leading finance,
+                HR, and operational strategy in highly regulated environments.
+                That combined experience now informs how I advise clients
+                through SMG—with clarity, discipline, and long-term perspective.
+              </p>
+            </div>
 
-            <p className={styles.body}>
-              Since 2019, I've served as CFO for Parkdale Management, a
-              multi-entity behavioral health organization, deepening my
-              expertise in healthcare finance, CARF compliance, payor contract
-              negotiation, and complex multi-entity operations.
-            </p>
+            {/* RIGHT column: image */}
+            <div className={styles.storyMedia} aria-hidden="true">
+              <div className={styles.experienceWrap}>
+                <Image
+                  src="/experience.jpg"
+                  alt="Abstract landscape suggesting clarity and perspective"
+                  fill
+                  className={styles.experienceImg}
+                  priority={false}
+                />
+                <div className={styles.experienceOverlay} />
+              </div>
+            </div>
           </div>
         </div>
       </section>

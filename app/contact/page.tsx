@@ -229,7 +229,7 @@ export default function ContactPage() {
                   <div>
                     <div className={styles.infoLabel}>Phone</div>
                     <a href="tel:+13175551234" className={styles.infoLink}>
-                      (317) 555-1234
+                      317-752-8649
                     </a>
                   </div>
                 </div>
