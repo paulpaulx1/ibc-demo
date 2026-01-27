@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { TrendingUp, Users, Award } from "lucide-react";
+import { TrendingUp, Users, Award, Building2 } from "lucide-react";
 import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
@@ -155,7 +155,7 @@ export default function AboutPage() {
       >
         <div className="container">
           <div className={styles.differentInner}>
-            <h2 className={styles.h2}>What Makes SMG Different</h2>
+            <h2 className={styles.h2}>Why Choose SMG</h2>
 
             <div className={styles.grid}>
               <div className={styles.card}>
@@ -193,6 +193,20 @@ export default function AboutPage() {
                   Specialized experience in behavioral health, CARF compliance,
                   and payor contract analysis. Most CPAs don't understand
                   healthcare finance—we bring it to every engagement.
+                </p>
+              </div>
+
+              <div className={styles.card}>
+                <div className={styles.cardIcon}>
+                  <Building2 size={32} />
+                </div>
+                <h3 className={styles.cardTitle}>
+                  Multi-Entity & Nonprofit Experience
+                </h3>
+                <p className={styles.cardBody}>
+                  Proven track record managing financial operations across four
+                  companies and one nonprofit simultaneously. Deep understanding
+                  of complex organizational structures and nonprofit compliance.
                 </p>
               </div>
             </div>
