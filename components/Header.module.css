@@ -64,6 +64,19 @@
 /* Dropdown menu animation */
 .dropdown {
     animation: slideDown 0.2s ease-out;
+    border-top: 1px solid rgba(178, 165, 116, 0.35);
+
+}
+
+.dropdown::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    /* height of the gap you want */
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: transparent;
 }
 
 .dropdownItem {
