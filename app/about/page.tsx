@@ -56,7 +56,7 @@ export default function AboutPage() {
             <div className={styles.heroImage}>
               <div className={styles.imageWrapper}>
                 <Image
-                  src="/family-portrait.png"
+                  src="/family.jpg"
                   alt="Scott Geans with family at Notre Dame"
                   width={400}
                   height={400}
