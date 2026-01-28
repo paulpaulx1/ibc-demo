@@ -1,4 +1,4 @@
-/* Hero animations */
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -45,6 +45,8 @@
 
 .hero {
     overflow: hidden;
+    padding-top: 40px;
+    position: relative;
 }
 
 .heroBackground {
@@ -55,53 +57,159 @@
     animation: fadeIn 0.8s ease-out;
 }
 
+/* GOLD ACCENTS (non-interactive, tasteful) */
+.goldAccents {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+/* Soft gold glow behind text */
+.goldAccents::before {
+    content: "";
+    position: absolute;
+    left: -180px;
+    top: 18%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle,
+            rgba(178, 165, 116, 0.16),
+            rgba(178, 165, 116, 0) 66%);
+    filter: blur(8px);
+}
+
+/* Thin gold hairline at bottom */
+.goldAccents::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            rgba(178, 165, 116, 0),
+            rgba(178, 165, 116, 0.55),
+            rgba(178, 165, 116, 0));
+}
+
 .heroText {
     margin-top: 30px;
+    position: relative;
+    z-index: 3;
 }
 
 .heroEyebrow {
     animation: fadeInUp 0.8s ease-out;
-    animation-fill-mode: both;
     animation-delay: 0.2s;
+    animation-fill-mode: both;
+
+    /* subtle gold readability */
+    text-shadow: 0 1px 14px rgba(178, 165, 116, 0.25);
 }
 
 .heroHeading {
     animation: fadeInUp 0.8s ease-out;
-    animation-fill-mode: both;
     animation-delay: 0.4s;
+    animation-fill-mode: both;
 }
 
 .heroAccent {
     animation: scaleIn 0.6s ease-out;
-    animation-fill-mode: both;
     animation-delay: 0.8s;
+    animation-fill-mode: both;
     transform-origin: left center;
+
+    height: 3px;
+    width: 92px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+            rgba(178, 165, 116, 0.95),
+            rgba(226, 214, 160, 0.9),
+            rgba(178, 165, 116, 0.55));
 }
 
 .heroSubheading {
     animation: fadeInUp 0.8s ease-out;
-    animation-fill-mode: both;
     animation-delay: 0.6s;
+    animation-fill-mode: both;
 }
 
 .heroCtas {
     animation: fadeInUp 0.8s ease-out;
-    animation-fill-mode: both;
     animation-delay: 0.8s;
+    animation-fill-mode: both;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.heroCtas a {
-    transition: all 0.3s ease;
+/* TEXT CTA — matches screenshot */
+.textCta {
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
 }
+
+.textCta::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.textCta:hover::after {
+    transform: scaleX(1);
+}
+
+/* OUTLINED CTA — transparent navy feel */
+.outlineCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.5rem;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: rgba(15, 31, 54, 0.35);
+    backdrop-filter: blur(4px);
+
+    transition: all 0.25s ease;
+}
+
+.outlineCta:hover {
+    background: rgba(15, 31, 54, 0.55);
+    border-color: rgba(255, 255, 255, 0.85);
+    transform: translateY(-1px);
+}
+
 
 @media (max-width: 768px) {
     .hero {
         padding-top: 8rem;
         background-position: -435px center !important;
     }
+
+    .goldAccents::before {
+        opacity: 0.65;
+    }
 }
 
-/* Reduce motion for accessibility */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
     .heroBackground,

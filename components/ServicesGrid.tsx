@@ -39,7 +39,7 @@ const services = [
     description:
       "Fractional CFO services and strategic planning for growing organizations—executive-level guidance, forecasting, and capital planning without the full-time cost.",
     icon: TrendingUp,
-    href: "/services/services#cfo-services",
+    href: "/services#cfo-services", // FIXED
   },
   {
     title: "Healthcare Finance Advisory",
@@ -59,29 +59,20 @@ const services = [
 
 export default function ServicesGrid() {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
-      {
-        threshold: 0.1, // Trigger when 10% of the section is visible
-        rootMargin: "0px 0px -100px 0px", // Start slightly before it comes into view
-      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
@@ -90,12 +81,25 @@ export default function ServicesGrid() {
       <div className="container">
         <div className="text-center mb-12">
           <h2
-            className={`h1 text-navy mb-2 ${isVisible ? styles.headingVisible : styles.heading}`}
+            className={`h1 text-navy mb-3 ${
+              isVisible ? styles.headingVisible : styles.heading
+            }`}
           >
             Services
           </h2>
+
+          {/* subtle gold divider */}
+          <div
+            className={`${styles.sectionDivider} ${
+              isVisible ? styles.dividerVisible : ""
+            }`}
+            aria-hidden="true"
+          />
+
           <p
-            className={`section-lead ${isVisible ? styles.subheadingVisible : styles.subheading}`}
+            className={`section-lead ${
+              isVisible ? styles.subheadingVisible : styles.subheading
+            }`}
           >
             Comprehensive financial solutions for Indianapolis businesses,
             healthcare organizations, and nonprofits.
@@ -106,35 +110,28 @@ export default function ServicesGrid() {
           {services.map(({ title, description, icon: Icon, href }) => (
             <article
               key={title}
-              className={`${styles.serviceCard} ${isVisible ? styles.visible : ""} group border border-muted rounded-2xl bg-gray-50 p-8 shadow-sm hover:shadow-xl relative overflow-hidden`}
+              className={`${styles.serviceCard} ${
+                isVisible ? styles.visible : ""
+              }`}
             >
               {/* Background Image */}
-              <div className={styles.cardBackground}>
+              <div className={styles.cardBackground} aria-hidden="true">
                 <Image src="/graph.jpg" alt="" fill className="object-cover" />
               </div>
 
-              <div className="flex flex-col items-start h-full relative z-10">
-                <div
-                  className={`${styles.iconWrapper} rounded-2xl transition-all duration-300 mb-6`}
-                >
-                  <Icon
-                    className={`${styles.icon} transition-colors duration-300`}
-                  />
+              {/* soft overlay for readability */}
+              <div className={styles.cardOverlay} aria-hidden="true" />
+
+              <div className={styles.cardInner}>
+                <div className={styles.iconWrapper}>
+                  <Icon className={styles.icon} />
                 </div>
-                <h3
-                  className={`${styles.title} font-serif font-semibold text-2xl text-navy transition-colors duration-300 mb-3`}
-                >
-                  {title}
-                </h3>
-                <p
-                  className={`${styles.description} text-slate text-base leading-relaxed transition-colors duration-300 mb-6 flex-grow`}
-                >
-                  {description}
-                </p>
-                <a
-                  href={href}
-                  className={`${styles.learnMore} text-navy font-medium underline transition-colors duration-300`}
-                >
+
+                <h3 className={styles.title}>{title}</h3>
+
+                <p className={styles.description}>{description}</p>
+
+                <a href={href} className={styles.learnMore}>
                   Learn More
                 </a>
               </div>

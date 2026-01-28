@@ -9,11 +9,14 @@ export default function AboutSection() {
           {/* LEFT: narrative */}
           <div className={styles.leftContent}>
             <h2
-              className={`${styles.heading} font-serif text-3xl md:text-4xl text-slate-900 leading-tight mb-6`}
+              className={`${styles.heading} font-serif text-3xl md:text-4xl text-slate-900 leading-tight mb-4`}
             >
               A trusted Indianapolis CPA firm focused on clarity, compliance,
               and confidence.
             </h2>
+
+            {/* subtle gold divider */}
+            <div className={styles.headingDivider} />
 
             <p
               className={`${styles.paragraph} text-slate-700 text-lg leading-relaxed mb-5 max-w-xl`}
@@ -36,9 +39,7 @@ export default function AboutSection() {
             >
               As an Indianapolis-based accounting firm, we understand the
               day-to-day challenges faced by growing organizations—from staying
-              compliant and organized to planning ahead with confidence. Our
-              work is grounded in accuracy, accountability, and clear
-              communication, so you always know where you stand financially.
+              compliant and organized to planning ahead with confidence.
             </p>
 
             <p
@@ -70,9 +71,7 @@ export default function AboutSection() {
           {/* RIGHT: image + support card */}
           <div className={`${styles.rightContent} space-y-6`}>
             {/* Image panel */}
-            <div
-              className={`${styles.imagePanel} relative overflow-hidden rounded-2xl border border-slate-200`}
-            >
+            <div className={`${styles.imagePanel} relative overflow-hidden rounded-2xl`}>
               <div className="relative h-56 md:h-64">
                 <Image
                   src="/about_section_chairs.jpg"
@@ -80,75 +79,49 @@ export default function AboutSection() {
                   fill
                   className="object-cover"
                 />
-                {/* subtle cool overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[rgba(15,31,54,0.15)] via-[rgba(15,31,54,0.08)] to-transparent" />
               </div>
             </div>
 
             {/* How we help */}
-            <div
-              className={`${styles.helpCard} bg-slate-50 border border-slate-200 rounded-2xl p-8`}
-            >
+            <div className={`${styles.helpCard} bg-slate-50 rounded-2xl p-8`}>
               <h3 className="font-semibold text-slate-900 text-lg mb-5">
                 How we help
               </h3>
 
               <ul className="space-y-4 text-slate-700">
-                <li className={`${styles.listItem} flex gap-3`}>
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  <span>
-                    Indianapolis bookkeeping services and monthly reporting
-                  </span>
-                </li>
-                <li className={`${styles.listItem} flex gap-3`}>
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  <span>Tax preparation and year-round tax planning</span>
-                </li>
-                <li className={`${styles.listItem} flex gap-3`}>
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  <span>
-                    Advisory support for small businesses and nonprofits
-                  </span>
-                </li>
-                <li className={`${styles.listItem} flex gap-3`}>
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  <span>Budgeting, forecasting, and cash-flow visibility</span>
-                </li>
-                <li className={`${styles.listItem} flex gap-3`}>
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                  <span>Clear communication with no jargon or surprises</span>
-                </li>
+                {[
+                  "Indianapolis bookkeeping services and monthly reporting",
+                  "Tax preparation and year-round tax planning",
+                  "Advisory support for small businesses and nonprofits",
+                  "Budgeting, forecasting, and cash-flow visibility",
+                  "Clear communication with no jargon or surprises",
+                ].map((text) => (
+                  <li key={text} className={`${styles.listItem} flex gap-3`}>
+                    <span className={styles.goldDot} />
+                    <span>{text}</span>
+                  </li>
+                ))}
               </ul>
 
               <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-                <div
-                  className={`${styles.statCard} bg-white border border-slate-200 rounded-xl p-4`}
-                >
-                  <div className="text-2xl font-semibold text-slate-900">
-                    CPA
+                {[
+                  { value: "CPA", label: "Licensed" },
+                  { value: "24+", label: "Years" },
+                  { value: "IN", label: "Indianapolis" },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className={`${styles.statCard} bg-white rounded-xl p-4`}
+                  >
+                    <div className="text-2xl font-semibold text-slate-900">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs text-slate-600 mt-1">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-xs text-slate-600 mt-1">Licensed</div>
-                </div>
-
-                <div
-                  className={`${styles.statCard} bg-white border border-slate-200 rounded-xl p-4`}
-                >
-                  <div className="text-2xl font-semibold text-slate-900">
-                    24+
-                  </div>
-                  <div className="text-xs text-slate-600 mt-1">Years</div>
-                </div>
-
-                <div
-                  className={`${styles.statCard} bg-white border border-slate-200 rounded-xl p-4`}
-                >
-                  <div className="text-2xl font-semibold text-slate-900">
-                    IN
-                  </div>
-                  <div className="text-xs text-slate-600 mt-1">
-                    Indianapolis
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

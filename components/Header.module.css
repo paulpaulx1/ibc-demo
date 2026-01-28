@@ -33,25 +33,10 @@
     }
 }
 
+/* Logo animation */
 .logo {
     transition: opacity 0.3s ease;
     animation: fadeInDown 0.6s ease-out;
-}
-
-.logoWhite {
-    opacity: 1;
-}
-
-.logoNavy {
-    opacity: 0;
-}
-
-.logoScrolled .logoWhite {
-    opacity: 0;
-}
-
-.logoScrolled .logoNavy {
-    opacity: 1;
 }
 
 /* Navigation animations */
@@ -115,6 +100,7 @@
     animation-delay: 0.2s;
 }
 
+/* CTA Button */
 .button {
     font-weight: 600;
     padding: 0.625rem 1.25rem;
@@ -124,22 +110,23 @@
     cursor: pointer;
 }
 
-/* --- TOP OF PAGE (not scrolled) --- */
+/* Button at top of page (transparent header) */
 .buttonTop {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.75);
     color: var(--navy);
     border-color: var(--navy);
 }
 
 .buttonTop:hover {
-    background: var(--navy);
-    color: white;
-    border-color: white;
+    /* gold */
+    color: var(--navy);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(15, 31, 54, 0.25);
+    box-shadow: 0 4px 10px rgba(178, 165, 116, 0.25);
 }
 
-/* --- SCROLLED STATE --- */
+f
+
+/* Button when scrolled (white header) */
 .buttonScrolled {
     background: white;
     color: var(--navy);
@@ -149,60 +136,35 @@
 .buttonScrolled:hover {
     background: var(--navy);
     color: white;
-    border-color: var(--navy);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(15, 31, 54, 0.25);
 }
 
-/* Accessibility - Focus Outlines */
+/* Focus states - gold for transparent header at top */
 .logo:focus,
-.logo:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 5px;
-}
-
-/* For nav links and dropdown triggers */
+.logo:focus-visible,
 a:focus,
 a:focus-visible,
 button:focus,
 button:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 5px;
+    outline: 2px solid var(--accent);
+    /* gold */
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
-/* For scrolled state, use darker outline */
-.logoScrolled:focus,
-.logoScrolled:focus-visible {
-    outline: 2px solid rgba(15, 31, 54, 0.8);
-    outline-offset: 5px;
+/* Navy focus when scrolled */
+.logo:focus.scrolled,
+.logo:focus-visible.scrolled,
+header.scrolled a:focus,
+header.scrolled a:focus-visible,
+header.scrolled button:focus,
+header.scrolled button:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
-/* Default focus outlines - WHITE (for transparent header at top of home) */
-a:focus,
-a:focus-visible,
-button:focus,
-button:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 5px;
-}
-
-.logo:focus,
-.logo:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 5px;
-}
-
-/* NAVY focus outlines when scrolled or on other pages */
-.headerScrolled a:focus,
-.headerScrolled a:focus-visible,
-.headerScrolled button:focus,
-.headerScrolled button:focus-visible {
-    outline: 2px solid rgba(15, 31, 54, 0.8);
-    outline-offset: 5px;
-}
-
-.headerScrolled .logo:focus,
-.headerScrolled .logo:focus-visible {
-    outline: 2px solid rgba(15, 31, 54, 0.8);
-    outline-offset: 5px;
+.serviceChevron {
+    color: var(--accent);
 }

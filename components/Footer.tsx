@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <div className={styles.brand}>
               <Image
-                src="/SMG Full Logo.png"
+                src="/SMG Full Logo White.png"
                 alt="SMG Accounting & Tax Advisors, LLC"
                 width={200}
                 height={40}
@@ -120,11 +120,9 @@ export default function Footer() {
               LLC. All rights reserved.
             </p>
 
-            <blockquote className="text-xs italic text-white/50 text-center md:text-right max-w-md">
-              "Whatever you do, work heartily, as for the Lord and not for men."
-              <span className="block not-italic mt-1 text-white/40">
-                — Colossians 3:23
-              </span>
+            <blockquote className={styles.scripture}>
+              “Whatever you do, work heartily, as for the Lord and not for men.”
+              <span className={styles.scriptureRef}>— Colossians 3:23</span>
             </blockquote>
           </div>
         </div>
