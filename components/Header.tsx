@@ -50,7 +50,7 @@ export default function Header() {
         <a href="/" className={`block h-32 relative ${styles.logo}`}>
           {/* White logo for transparent header */}
           <Image
-            src="/SMG Full Logo White.png"
+            src="/SMG Full Logo1.png"
             alt="SMG Accounting & Tax Advisors, LLC"
             height={32}
             width={200}
