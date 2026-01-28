@@ -11,7 +11,7 @@ export default function AboutSection() {
             <h2
               className={`${styles.heading} font-serif text-3xl md:text-4xl text-slate-900 leading-tight mb-4`}
             >
-              A trusted Indianapolis CPA firm focused on clarity, compliance,
+              A trusted CPA firm focused on clarity, compliance,
               and confidence.
             </h2>
 
