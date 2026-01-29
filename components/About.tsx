@@ -11,8 +11,7 @@ export default function AboutSection() {
             <h2
               className={`${styles.heading} font-serif text-3xl md:text-4xl text-slate-900 leading-tight mb-4`}
             >
-              A trusted CPA firm focused on clarity, compliance,
-              and confidence.
+              A trusted CPA firm focused on clarity, compliance, and confidence.
             </h2>
 
             {/* subtle gold divider */}
@@ -37,9 +36,10 @@ export default function AboutSection() {
             <p
               className={`${styles.paragraph} text-slate-700 leading-relaxed mb-5 max-w-xl`}
             >
-              As an Indianapolis-based accounting firm, we understand the
-              day-to-day challenges faced by growing organizations—from staying
-              compliant and organized to planning ahead with confidence.
+              Based in Indianapolis and serving businesses nationwide, we
+              understand the day-to-day challenges faced by growing
+              organizations—from staying compliant and organized to planning
+              ahead with confidence.
             </p>
 
             <p
@@ -71,7 +71,9 @@ export default function AboutSection() {
           {/* RIGHT: image + support card */}
           <div className={`${styles.rightContent} space-y-6`}>
             {/* Image panel */}
-            <div className={`${styles.imagePanel} relative overflow-hidden rounded-2xl`}>
+            <div
+              className={`${styles.imagePanel} relative overflow-hidden rounded-2xl`}
+            >
               <div className="relative h-56 md:h-64">
                 <Image
                   src="/about_section_chairs.jpg"
@@ -91,7 +93,7 @@ export default function AboutSection() {
 
               <ul className="space-y-4 text-slate-700">
                 {[
-                  "Indianapolis bookkeeping services and monthly reporting",
+                  "Monthly bookkeeping and reporting for businesses nationwide",
                   "Tax preparation and year-round tax planning",
                   "Advisory support for small businesses and nonprofits",
                   "Budgeting, forecasting, and cash-flow visibility",
@@ -108,7 +110,7 @@ export default function AboutSection() {
                 {[
                   { value: "CPA", label: "Licensed" },
                   { value: "24+", label: "Years" },
-                  { value: "IN", label: "Indianapolis" },
+                  { value: "Indy", label: "Based" },
                 ].map((stat) => (
                   <div
                     key={stat.label}

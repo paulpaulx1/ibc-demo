@@ -1,3 +1,4 @@
+// app/services/ServicesPageClient.tsx
 "use client";
 
 import Image from "next/image";
@@ -12,9 +13,9 @@ import {
 } from "lucide-react";
 import styles from "./ServicesPage.module.css";
 
-export default function ServicesPage() {
+export default function ServicesPageClient() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
-    new Set()
+    new Set(),
   );
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
@@ -34,7 +35,7 @@ export default function ServicesPage() {
       {
         threshold: 0.15,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     Object.values(sectionRefs.current).forEach((ref) => {
@@ -54,7 +55,7 @@ export default function ServicesPage() {
       <section className={styles.hero}>
         <Image
           src="/services/bookkeeping/bookkeeping.jpg"
-          alt=""
+          alt="Indianapolis accounting and bookkeeping services"
           fill
           className={styles.bgImage}
           priority
@@ -66,9 +67,9 @@ export default function ServicesPage() {
               Professional Accounting & CPA Services in Indianapolis
             </h1>
             <p className={styles.lede}>
-              Comprehensive financial management from accounting and bookkeeping
-              to strategic CFO services and healthcare finance advisory—backed
-              by 24+ years of experience.
+              Based in Indianapolis and serving businesses nationwide—comprehensive financial management from accounting and bookkeeping
+              to strategic CFO services and healthcare finance advisory, backed
+              by 24+ years of CPA experience.
             </p>
             <a href="contact" className={styles.primaryCta}>
               Schedule a Consultation
@@ -93,17 +94,17 @@ export default function ServicesPage() {
               </div>
               <h2 className={styles.h2}>Accounting Services</h2>
               <p className={styles.body}>
-                Comprehensive accounting solutions for Indianapolis businesses and
+                As one of the best accountant firms Indianapolis businesses rely on, we provide comprehensive accounting solutions for small businesses and
                 nonprofits—from financial statement preparation to multi-entity
-                management and regulatory compliance. We deliver accurate, timely
-                financial reporting that supports informed decision-making and
-                regulatory requirements.
+                management and regulatory compliance. Serving clients across Indiana and nationwide, we deliver accurate,
+                timely financial reporting that supports informed
+                decision-making and regulatory requirements.
               </p>
               <p className={styles.body}>
                 Our accounting services are designed for growing organizations
                 that need more than basic transaction recording—businesses and
                 nonprofits that value accuracy, strategic insight, and
-                professional financial oversight.
+                professional financial oversight from an experienced accountant Indianapolis companies trust.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
@@ -132,7 +133,7 @@ export default function ServicesPage() {
             <div className={styles.serviceImage}>
               <Image
                 src="/services/services-accounting.jpg"
-                alt="Professional accounting services"
+                alt="Indianapolis accounting firm providing professional CPA services"
                 fill
                 className={styles.serviceImg}
               />
@@ -154,7 +155,7 @@ export default function ServicesPage() {
             <div className={styles.serviceImage}>
               <Image
                 src="/services/services-bookkeeping.jpg"
-                alt="Professional bookkeeping services"
+                alt="Indianapolis bookkeeping services with CPA oversight"
                 fill
                 className={styles.serviceImg}
               />
@@ -166,17 +167,17 @@ export default function ServicesPage() {
               </div>
               <h2 className={styles.h2}>Bookkeeping Services</h2>
               <p className={styles.body}>
-                Professional monthly bookkeeping with CPA oversight—accurate
+                Professional Indianapolis bookkeeping services with CPA oversight—accurate
                 reconciliation, organized records, and financial clarity for
-                confident decision-making. Our Indianapolis bookkeeping services
-                take the administrative burden off your plate while ensuring your
-                books are accurate, current, and audit-ready.
+                confident decision-making. As an experienced Indianapolis bookkeeper serving businesses nationwide, we
+                take the administrative burden off your plate while ensuring your books
+                are accurate, current, and audit-ready.
               </p>
               <p className={styles.body}>
-                Whether you're transitioning from spreadsheets, managing multiple
-                entities, or need consistent monthly close processes, we provide
-                reliable bookkeeping that supports your business growth and
-                financial planning needs.
+                Whether you're transitioning from spreadsheets, managing
+                multiple entities, or need consistent monthly close processes,
+                our bookkeeping Indianapolis clients rely on provides the reliable foundation that supports business
+                growth and financial planning needs.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
@@ -223,15 +224,15 @@ export default function ServicesPage() {
               <p className={styles.body}>
                 Strategic tax planning and preparation for individuals,
                 businesses, and nonprofits—minimizing liability while ensuring
-                full federal and state compliance. We go beyond annual tax
+                full federal and state compliance. As a top tax accountant Indianapolis businesses and individuals turn to, we serve clients across Indiana and nationwide, going beyond annual tax
                 preparation to provide year-round strategic guidance on entity
                 structure, major transactions, and tax optimization strategies.
               </p>
               <p className={styles.body}>
                 With deep experience in corporate, individual, and nonprofit tax
-                strategy, we help Indianapolis businesses and individuals navigate
+                strategy, our best tax accountant Indianapolis professionals trust helps navigate
                 complex tax situations while identifying opportunities for
-                strategic tax savings.
+                strategic tax savings and multi-state compliance.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
@@ -260,7 +261,7 @@ export default function ServicesPage() {
             <div className={styles.serviceImage}>
               <Image
                 src="/services/services-taxpreparation.jpg"
-                alt="Tax preparation and planning services"
+                alt="Indianapolis tax accountant providing tax preparation and planning"
                 fill
                 className={styles.serviceImg}
               />
@@ -282,7 +283,7 @@ export default function ServicesPage() {
             <div className={styles.serviceImage}>
               <Image
                 src="/services/services-CFO.jpg"
-                alt="CFO and financial planning services"
+                alt="CFO and financial strategy services"
                 fill
                 className={styles.serviceImg}
               />
@@ -292,19 +293,20 @@ export default function ServicesPage() {
               <div className={styles.serviceIcon}>
                 <TrendingUp size={40} />
               </div>
-              <h2 className={styles.h2}>CFO & Financial Planning</h2>
+              <h2 className={styles.h2}>CFO & Financial Strategy</h2>
               <p className={styles.body}>
-                Fractional CFO services and strategic planning for growing
-                organizations—executive-level guidance, forecasting, and capital
-                planning without the full-time cost. We provide the financial
-                leadership that positions your business for sustainable growth and
-                informed strategic decision-making.
+                Fractional CFO services and strategic financial guidance for
+                growing organizations—executive-level guidance, forecasting, and
+                capital planning without the full-time cost. We provide the
+                financial leadership that positions your business for
+                sustainable growth and informed strategic decision-making.
               </p>
               <p className={styles.body}>
                 With 24+ years of financial leadership experience including
                 multi-entity operations, healthcare finance, and successful
                 business exits, we bring CFO-level insight to budgeting,
-                forecasting, capital planning, and strategic financial management.
+                forecasting, capital planning, and strategic financial
+                management.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
@@ -350,17 +352,18 @@ export default function ServicesPage() {
               <h2 className={styles.h2}>Healthcare Finance Advisory</h2>
               <p className={styles.body}>
                 Specialized financial leadership for behavioral health and
-                healthcare organizations—CARF compliance, payor contract analysis,
-                and regulatory expertise. We understand the unique financial and
-                operational challenges of healthcare organizations, particularly
-                in behavioral health and professionals monitoring programs.
+                healthcare organizations—CARF compliance, payor contract
+                analysis, and regulatory expertise. We understand the unique
+                financial and operational challenges of healthcare
+                organizations, particularly in behavioral health and
+                professionals monitoring programs.
               </p>
               <p className={styles.body}>
-                Drawing on experience as CFO for a behavioral health organization
-                managing rapid growth, state-funded program development, and
-                complex payor relationships, we provide the strategic financial
-                guidance that supports quality care delivery in highly regulated
-                environments.
+                Drawing on experience as CFO for a behavioral health
+                organization managing rapid growth, state-funded program
+                development, and complex payor relationships, we provide the
+                strategic financial guidance that supports quality care delivery
+                in highly regulated environments.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
@@ -425,9 +428,9 @@ export default function ServicesPage() {
               <p className={styles.body}>
                 Strategic guidance for business transitions, acquisitions, and
                 exits—informed by real experience buying, scaling, and
-                successfully selling a professional services firm. We provide the
-                financial insight and strategic planning that helps Indianapolis
-                business owners navigate critical transitions and position their
+                successfully selling a professional services firm. We provide
+                the financial insight and strategic planning that helps business
+                owners navigate critical transitions and position their
                 companies for sustainable growth.
               </p>
               <p className={styles.body}>

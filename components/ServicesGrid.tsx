@@ -35,11 +35,11 @@ const services = [
     href: "/services#tax-planning",
   },
   {
-    title: "CFO & Financial Planning",
+    title: "CFO & Financial Strategy",
     description:
-      "Fractional CFO services and strategic planning for growing organizations—executive-level guidance, forecasting, and capital planning without the full-time cost.",
+      "Fractional CFO services and strategic financial guidance for growing organizations—executive-level guidance, forecasting, and capital planning without the full-time cost.",
     icon: TrendingUp,
-    href: "/services#cfo-services", // FIXED
+    href: "/services#cfo-services",
   },
   {
     title: "Healthcare Finance Advisory",
@@ -101,8 +101,8 @@ export default function ServicesGrid() {
               isVisible ? styles.subheadingVisible : styles.subheading
             }`}
           >
-            Comprehensive financial solutions for Indianapolis businesses,
-            healthcare organizations, and nonprofits.
+            Comprehensive financial solutions for small businesses, healthcare
+            organizations, and nonprofits.
           </p>
         </div>
 
