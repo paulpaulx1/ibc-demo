@@ -160,7 +160,7 @@
 
 /* Story */
 .story {
-    padding: 5rem 0;
+    padding: 5rem 4rem;
     background: white;
     opacity: 0;
     transform: translateY(30px);
