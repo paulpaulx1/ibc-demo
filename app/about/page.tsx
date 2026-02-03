@@ -101,30 +101,36 @@ export default function AboutPage() {
               </h2>
 
               <p className={styles.body}>
-                Most CPAs can prepare tax returns and manage books. What sets
-                SMG apart is the depth of experience behind every
-                engagement—experience shaped by commercial banking, Fortune 500
-                leadership, entrepreneurship, and complex healthcare operations.
+                Scott Geans, CPA is the founder of SMG Accounting & Tax
+                Advisors, LLC, where he partners with individuals and small
+                business owners who value clarity, trust, and thoughtful
+                financial guidance.
               </p>
 
               <p className={styles.body}>
-                After beginning my career in banking and earning my CPA and MPA
-                from the IU Kelley School of Business, I held progressively
-                senior financial roles—from managing a $1.1 billion
-                public-sector budget at the Indiana State Budget Agency to
-                leading $450 million in operating budgets at Eli Lilly and
-                serving as Controller for a $120 million global health
-                initiative.
+                With more than two decades of experience, Scott&apos;s background
+                spans public accounting, banking, government finance, nonprofit
+                leadership, and executive-level CFO roles. He previously owned
+                and operated a successful CPA firm for nearly a decade before
+                selling it in 2019, and he continues to bring a strategic,
+                forward-looking mindset to every client relationship.
               </p>
 
               <p className={styles.body}>
-                I later acquired and scaled a professional services firm,
-                successfully selling the business in 2019 for more than twice
-                the original purchase price. Most recently, I served as CFO for
-                a multi-entity behavioral health organization, leading finance,
-                HR, and operational strategy in highly regulated environments.
-                That combined experience now informs how I advise clients
-                through SMG—with clarity, discipline, and long-term perspective.
+                Scott&apos;s values were shaped early in life by growing up around
+                his father, Rocky Geans, who owned and operated a successful
+                construction company. Watching his father lead a business built
+                on hard work, honesty, and clear communication left a lasting
+                impression and continues to guide how Scott serves his clients
+                today.
+              </p>
+              <p className={styles.body}>
+                SMG Accounting & Tax Advisors is a family endeavor in the truest
+                sense. Scott&apos;s wife, Andrea, works alongside him in the
+                practice, helping manage operations and client experience.
+                Together, they are raising two children—Isaac (16) and Ava
+                (12)—and believe that strong families and strong businesses are
+                built on the same principles: trust, consistency, and care.
               </p>
             </div>
 
