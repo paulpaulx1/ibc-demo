@@ -6,7 +6,7 @@ const servicesLinks = [
   { title: "Accounting Services", href: "/services#accounting" },
   { title: "Bookkeeping Services", href: "/services#bookkeeping" },
   { title: "Tax Preparation & Planning", href: "/services#tax-planning" },
-  { title: "CFO & Financial Planning", href: "/services#cfo-services" },
+  { title: "CFO & Financial Strategy", href: "/services#cfo-services" },
   {
     title: "Healthcare Finance Advisory",
     href: "/services#healthcare-finance",
@@ -63,11 +63,8 @@ export default function Footer() {
               </li>
               <li className={`${styles.listItem} flex items-center gap-3`}>
                 <Mail className="w-5 h-5 flex-shrink-0 text-accent" />
-                <a
-                  href="mailto:scottgeanscpa@gmail.com"
-                  className={styles.link}
-                >
-                  scottgeanscpa@gmail.com
+                <a href="mailto:scott@smgcpafirm.com" className={styles.link}>
+                  scott@smgcpafirm.com
                 </a>
               </li>
               <li className={`${styles.listItem} flex items-start gap-3`}>
@@ -93,7 +90,7 @@ export default function Footer() {
                 },
                 {
                   Icon: Mail,
-                  href: "mailto:scottgeanscpa@gmail.com",
+                  href: "mailto:scott@smgcpafirm.com",
                   label: "Email",
                 },
               ].map(({ Icon, href, label }) => (
