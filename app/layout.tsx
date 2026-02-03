@@ -10,14 +10,22 @@ const baskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  title: "SMG Accounting & Tax Advisors — CPA Firm in Indianapolis",
+  title: "Indianapolis Accounting Firm | Tax, Bookkeeping & CFO Services | SMG",
   description:
-    "Trusted Indianapolis CPA firm offering accounting, tax preparation, bookkeeping, and CFO advisory for small businesses, nonprofits, and healthcare organizations.",
+    "Leading accounting firm in Indianapolis offering tax preparation, bookkeeping services, and CFO advisory. SMG serves small businesses, nonprofits, and healthcare organizations throughout Indianapolis, Indiana with expert CPA guidance.",
   openGraph: {
     title:
-      "SMG Accounting & Tax Advisors — Indianapolis CPA & Advisory Services",
+      "Indianapolis Accounting Firm | Tax, Bookkeeping & CFO Services | SMG",
     description:
-      "Expert accounting, tax planning, bookkeeping, and financial advisory services for Indianapolis businesses and nonprofits. Led by Scott Geans, CPA, MPA.",
+      "Leading accounting firm in Indianapolis offering tax preparation, bookkeeping services, and CFO advisory. SMG serves small businesses, nonprofits, and healthcare organizations throughout Indianapolis, Indiana with expert CPA guidance.",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Indianapolis Accounting Firm | Tax, Bookkeeping & CFO Services | SMG",
+    description:
+      "Leading accounting firm in Indianapolis offering tax preparation, bookkeeping services, and CFO advisory.",
     images: ["/og-image.png"],
   },
   icons: { icon: "/favicon.ico" },
