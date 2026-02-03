@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-white/70 text-base leading-relaxed mt-4 max-w-sm">
-              Professional accounting, tax, and CFO services for Indianapolis
+              Professional accounting, tax, and CFO services for small
               businesses and nonprofits—focused on clarity, compliance, and
               confidence.
             </p>
