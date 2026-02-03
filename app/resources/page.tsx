@@ -153,7 +153,7 @@ export default function ResourcesPage() {
         <div className="container">
           <div className={styles.heroInner}>
             <h1 className={styles.h1}>
-              Financial Resources for Indianapolis Businesses
+              Financial Resources for Small Businesses
               <span className={styles.accentLine} />
             </h1>
             <p className={styles.lede}>

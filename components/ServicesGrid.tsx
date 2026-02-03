@@ -77,7 +77,7 @@ export default function ServicesGrid() {
   }, []);
 
   return (
-    <section id="services" className="py-20 bg-soft" ref={sectionRef}>
+    <section id="services" className="pb-20 bg-soft" ref={sectionRef}>
       <div className="container">
         <div className="text-center mb-12">
           <h2

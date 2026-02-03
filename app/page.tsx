@@ -14,7 +14,7 @@ export default function HomePage() {
       <Hero />
       <About />
       <ServicesGrid />
-      <Band />
+      {/* <Band /> */}
       {/* <Resources />
       <About />
       <Contact /> */}
