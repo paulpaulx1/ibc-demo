@@ -3,68 +3,79 @@ import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, email, phone, company, message } = body;
+    const { name, email, phone, company, message } = await request.json();
 
-    // Validate required fields
+    // Basic validation
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 },
+        { error: "Name, email, and message are required" },
+        { status: 400 }
       );
     }
 
     // Create transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST || "smtp.gmail.com",
-      port: parseInt(process.env.EMAIL_PORT || "587"),
-      secure: false, // true for 465, false for other ports
+      host: process.env.SMTP_HOST, // e.g., smtp.gmail.com
+      port: parseInt(process.env.SMTP_PORT || "587"),
+      secure: process.env.SMTP_PORT === "465", // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS, // Gmail app password
       },
     });
 
-    // Email to client
-    await transporter.sendMail({
-      from: `"SMG Accounting Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO || process.env.EMAIL_USER,
+    // Email to Scott
+    const mailOptions = {
+      from: process.env.SMTP_FROM, // Your controlled email
+      to: "scott@smgcpafirm.com",
+      replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
-        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, "<br>")}</p>
-      `,
-    });
+      text: `
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+Company: ${company || "Not provided"}
 
-    // Auto-reply to user
-    await transporter.sendMail({
-      from: `"Scott Geans, CPA - SMG Accounting" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: "Thank you for contacting SMG Accounting",
-      html: `
-        <h2>Thank you for reaching out!</h2>
-        <p>Hi ${name},</p>
-        <p>We've received your message and will get back to you within 1-2 business days.</p>
-        <p>In the meantime, feel free to reach us directly at:</p>
-        <ul>
-          <li>Email: ${process.env.EMAIL_TO || "scott@smgaccounting.com"}</li>
-          <li>Phone: 317-752-8649</li>
-        </ul>
-        <p>Best regards,<br>Scott Geans, CPA<br>SMG Accounting & Tax Advisors, LLC</p>
+Message:
+${message}
       `,
-    });
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #1e3a5f; border-bottom: 3px solid #d4a574; padding-bottom: 10px;">
+            New Contact Form Submission
+          </h2>
+          
+          <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 10px 0;"><strong>Name:</strong> ${name}</p>
+            <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p style="margin: 10px 0;"><strong>Phone:</strong> ${phone || "Not provided"}</p>
+            <p style="margin: 10px 0;"><strong>Company:</strong> ${company || "Not provided"}</p>
+          </div>
+          
+          <div style="margin: 20px 0;">
+            <h3 style="color: #1e3a5f;">Message:</h3>
+            <p style="line-height: 1.6; color: #475569;">${message.replace(/\n/g, "<br>")}</p>
+          </div>
+          
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #64748b; font-size: 14px;">
+            <p>This email was sent from the SMG Accounting & Tax Advisors contact form.</p>
+          </div>
+        </div>
+      `,
+    };
 
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Contact form error:", error);
+    // Send email
+    await transporter.sendMail(mailOptions);
+
     return NextResponse.json(
-      { error: "Failed to send message" },
-      { status: 500 },
+      { message: "Email sent successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      { status: 500 }
     );
   }
 }

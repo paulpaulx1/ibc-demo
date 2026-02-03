@@ -214,10 +214,10 @@ export default function ContactPage() {
                   <div>
                     <div className={styles.infoLabel}>Email</div>
                     <a
-                      href="mailto:scottgeanscpa@gmail.com"
+                      href="mailto:scott@smgcpafirm.com"
                       className={styles.infoLink}
                     >
-                      scottgeanscpa@gmail.com
+                      scott@smgcpafirm.com
                     </a>
                   </div>
                 </div>
@@ -228,8 +228,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className={styles.infoLabel}>Phone</div>
-                    <a href="tel:+13175551234" className={styles.infoLink}>
-                      317-752-8649
+                    <a href="tel:+13175281649" className={styles.infoLink}>
+                      317-528-1649
                     </a>
                   </div>
                 </div>
