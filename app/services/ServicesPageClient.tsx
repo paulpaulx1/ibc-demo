@@ -13,19 +13,6 @@ import {
 } from "lucide-react";
 import styles from "./ServicesPage.module.css";
 
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "SMG Indianapolis Bookkeeping | Accounting & Tax Advisors",
-  description:
-    "Professional Indianapolis bookkeeping services for small businesses and nonprofits. Expert bookkeeper handling QuickBooks, monthly reconciliation, and financial reporting for local businesses.",
-  openGraph: {
-    title: "SMG Indianapolis Bookkeeping | Accounting & Tax Advisors",
-    description:
-      "Professional Indianapolis bookkeeping services for small businesses and nonprofits.",
-  },
-};
-
 export default function ServicesPageClient() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
     new Set(),
@@ -244,9 +231,9 @@ export default function ServicesPageClient() {
               <p className={styles.body}>
                 Strategic tax planning and preparation for individuals,
                 businesses, and nonprofits—minimizing liability while ensuring
-                full federal and state compliance. Small businesses turn
-                to us as their tax accountant for more than annual filing—we
-                provide year-round strategic guidance on entity structure, major
+                full federal and state compliance. Small businesses turn to us
+                as their tax accountant for more than annual filing—we provide
+                year-round strategic guidance on entity structure, major
                 transactions, and tax optimization strategies.
               </p>
               <p className={styles.body}>
