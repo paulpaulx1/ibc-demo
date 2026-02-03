@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <div className={styles.brand}>
               <Image
-                src="/SMG Full Logo White.png"
+                src="/SMG Full Logo1.png"
                 alt="SMG Accounting & Tax Advisors, LLC"
                 width={200}
                 height={40}
