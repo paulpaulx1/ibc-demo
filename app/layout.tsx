@@ -10,7 +10,7 @@ const baskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  title: "Indianapolis Accounting Firm | Tax, Bookkeeping & CFO Services | SMG",
+  title: "Trusted CPA Firm for Small Businesses",
   description:
     "Leading accounting firm in Indianapolis offering tax preparation, bookkeeping services, and CFO advisory. SMG serves small businesses, nonprofits, and healthcare organizations throughout Indianapolis, Indiana with expert CPA guidance.",
   openGraph: {
