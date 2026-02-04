@@ -230,9 +230,11 @@
 
 .differentInner {
     max-width: 72rem;
+    margin: 0 auto;
 }
 
 .different.visible .h2 {
+    text-align: center;
     animation: fadeInUp 0.6s ease-out 0.2s forwards;
     opacity: 0;
 }

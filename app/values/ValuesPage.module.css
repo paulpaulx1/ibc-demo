@@ -35,8 +35,40 @@
     }
 }
 
+.heroContent {
+    max-width: 50rem;
+    /* 800px */
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.foundationInner {
+    max-width: 50rem;
+    /* 800px */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.practiceSection {
+    opacity: 0;
+    max-width: 50rem;
+    /* 800px - constrains text in two-column layout */
+}
+
+.body {
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    font-size: 1.0625rem;
+    max-width: 50rem;
+    /* 800px */
+}
+
 .page {
-    padding-top: 154px;;;
+    padding-top: 154px;
+    ;
+    ;
 }
 
 /* Hero */
@@ -389,4 +421,92 @@
     .accentLine {
         width: 80px;
     }
+}
+
+/* ===== HERO: dark navy gradient + light text ===== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 5.5rem 0;
+    text-align: center;
+
+    /* deep navy gradient */
+    background:
+        radial-gradient(900px 420px at 50% 20%, rgba(212, 165, 116, 0.22), rgba(212, 165, 116, 0) 60%),
+        radial-gradient(700px 380px at 15% 10%, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0) 55%),
+        linear-gradient(180deg, #0b1b33 0%, #0a223f 55%, #081a30 100%);
+}
+
+/* subtle “spice” texture (no image asset needed) */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.10;
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.06) 0px,
+            rgba(255, 255, 255, 0.06) 1px,
+            rgba(255, 255, 255, 0) 3px,
+            rgba(255, 255, 255, 0) 7px);
+    mix-blend-mode: overlay;
+}
+
+/* keep content above overlays */
+.heroContent {
+    position: relative;
+    z-index: 1;
+}
+
+/* Title goes light */
+.h1 {
+    color: #f8fafc;
+    /* slate-50 */
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Accent line pops a little more on dark */
+.accentLine {
+    background: linear-gradient(90deg,
+            rgba(212, 165, 116, 0),
+            rgba(212, 165, 116, 0.95),
+            rgba(212, 165, 116, 0));
+    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.22);
+}
+
+/* Lede becomes light + readable */
+.lede {
+    color: rgba(248, 250, 252, 0.82);
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+/* mobile spacing */
+@media (max-width: 768px) {
+    .hero {
+        padding: 4.25rem 0;
+    }
+}
+
+/* Hero bottom divider */
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    transform: translateX(-50%);
+    width: min(480px, 70vw);
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            rgba(212, 165, 116, 0),
+            rgba(212, 165, 116, 0.9),
+            rgba(212, 165, 116, 0));
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.08),
+        0 6px 24px rgba(212, 165, 116, 0.25);
+    opacity: 0.85;
+    z-index: 2;
 }

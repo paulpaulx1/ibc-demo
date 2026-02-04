@@ -167,11 +167,12 @@ export default function AboutPage() {
                 <div className={styles.cardIcon}>
                   <TrendingUp size={32} />
                 </div>
-                <h3 className={styles.cardTitle}>CFO-Level Insight</h3>
+                <h3 className={styles.cardTitle}>CFO-Level Experience</h3>
                 <p className={styles.cardBody}>
-                  Real executive financial leadership experience—not just
-                  accounting services. Strategic thinking on budgeting,
-                  forecasting, and capital planning from actual CFO experience.
+                  More than 24 years of financial leadership experience—from
+                  Fortune 500 corporate finance to executive-level CFO roles.
+                  Strategic thinking on budgeting, forecasting, and capital
+                  planning from real CFO experience.
                 </p>
               </div>
 
@@ -183,7 +184,8 @@ export default function AboutPage() {
                 <p className={styles.cardBody}>
                   Successfully bought, scaled, and sold a professional services
                   firm. Real experience with business transitions, growth
-                  challenges, and exit planning—not just advisory.
+                  challenges, and the day-to-day realities of running a small
+                  business.
                 </p>
               </div>
 
@@ -191,13 +193,12 @@ export default function AboutPage() {
                 <div className={styles.cardIcon}>
                   <Award size={32} />
                 </div>
-                <h3 className={styles.cardTitle}>
-                  Healthcare Finance Expertise
-                </h3>
+                <h3 className={styles.cardTitle}>Proactive, Not Reactive</h3>
                 <p className={styles.cardBody}>
-                  Specialized experience in behavioral health, CARF compliance,
-                  and payor contract analysis. Most CPAs don't understand
-                  healthcare finance—we bring it to every engagement.
+                  We focus on anticipating issues, identifying opportunities,
+                  and improving financial clarity—not reacting after problems
+                  arise. Year-round guidance designed to support long-term
+                  stability.
                 </p>
               </div>
 
@@ -205,13 +206,12 @@ export default function AboutPage() {
                 <div className={styles.cardIcon}>
                   <Building2 size={32} />
                 </div>
-                <h3 className={styles.cardTitle}>
-                  Multi-Entity & Nonprofit Experience
-                </h3>
+                <h3 className={styles.cardTitle}>Values-Driven Partnership</h3>
                 <p className={styles.cardBody}>
-                  Proven track record managing financial operations across four
-                  companies and one nonprofit simultaneously. Deep understanding
-                  of complex organizational structures and nonprofit compliance.
+                  A family-run firm built on honesty, integrity, and
+                  stewardship. We believe in clear communication, transparent
+                  pricing, and building long-term relationships—not short-term
+                  fixes.
                 </p>
               </div>
             </div>
