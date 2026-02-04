@@ -228,8 +228,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className={styles.infoLabel}>Phone</div>
-                    <a href="tel:+13175281649" className={styles.infoLink}>
-                      317-528-1649
+                    <a href="tel:+1317528649" className={styles.infoLink}>
+                      317-752-8649
                     </a>
                   </div>
                 </div>
