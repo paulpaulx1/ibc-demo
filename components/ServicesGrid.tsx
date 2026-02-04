@@ -3,10 +3,10 @@
 import {
   Calculator,
   BookOpen,
+  Users,
   FileCheck,
   TrendingUp,
-  Hospital,
-  Handshake,
+  Wrench,
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -14,46 +14,46 @@ import styles from "./ServicesGrid.module.css";
 
 const services = [
   {
-    title: "Accounting Services",
+    title: "Monthly Bookkeeping",
     description:
-      "Comprehensive accounting solutions for businesses and nonprofits—from financial statement preparation to multi-entity management and regulatory compliance.",
-    icon: Calculator,
-    href: "/services#accounting",
-  },
-  {
-    title: "Bookkeeping Services",
-    description:
-      "Professional monthly bookkeeping with CPA oversight—accurate reconciliation, organized records, and financial clarity for confident decision-making.",
+      "Accurate, organized bookkeeping that provides a reliable financial foundation for your business. Clean, timely monthly financial reports with CPA-level quality.",
     icon: BookOpen,
     href: "/services#bookkeeping",
   },
   {
-    title: "Tax Preparation & Planning",
+    title: "Monthly Accounting",
     description:
-      "Strategic tax planning and preparation for individuals, businesses, and nonprofits—minimizing liability while ensuring full federal and state compliance.",
+      "CPA-level accounting oversight that goes beyond bookkeeping—ensuring your financials are accurate, compliant, and decision-ready.",
+    icon: Calculator,
+    href: "/services#accounting",
+  },
+  {
+    title: "Payroll Administration Support",
+    description:
+      "Payroll coordination and oversight that ensures accuracy, compliance, and consistency—without the administrative burden.",
+    icon: Users,
+    href: "/services#payroll",
+  },
+  {
+    title: "Income Tax Preparation & Planning",
+    description:
+      "Strategic tax planning and compliant preparation for individuals and businesses—focused on minimizing liability while avoiding surprises.",
     icon: FileCheck,
     href: "/services#tax-planning",
   },
   {
-    title: "CFO & Financial Strategy",
+    title: "Fractional CFO Support",
     description:
-      "Fractional CFO services and strategic financial guidance for growing organizations—executive-level guidance, forecasting, and capital planning without the full-time cost.",
+      "Experienced financial leadership without the cost of a full-time hire. Strategic insight, forecasting, and decision support for owners and leadership teams.",
     icon: TrendingUp,
-    href: "/services#cfo-services",
+    href: "/services#cfo",
   },
   {
-    title: "Healthcare Finance Advisory",
+    title: "Books & Financial Statement Cleanup",
     description:
-      "Specialized financial leadership for behavioral health and healthcare organizations—CARF compliance, payor contract analysis, and regulatory expertise.",
-    icon: Hospital,
-    href: "/services#healthcare-finance",
-  },
-  {
-    title: "Business Advisory & M&A",
-    description:
-      "Strategic guidance for business transitions, acquisitions, and exits—informed by real experience buying, scaling, and successfully selling a professional services firm.",
-    icon: Handshake,
-    href: "/services#business-advisory",
+      "One-time or short-term engagements designed to correct historical issues, organize financial records, and restore confidence in your financial statements.",
+    icon: Wrench,
+    href: "/services#cleanup",
   },
 ];
 
@@ -101,8 +101,7 @@ export default function ServicesGrid() {
               isVisible ? styles.subheadingVisible : styles.subheading
             }`}
           >
-            Comprehensive financial solutions for small businesses, healthcare
-            organizations, and nonprofits.
+            Bookkeeping, accounting, payroll, and tax services for small businesses.
           </p>
         </div>
 

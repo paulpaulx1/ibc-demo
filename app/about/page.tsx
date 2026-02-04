@@ -72,18 +72,17 @@ export default function AboutPage() {
                 <span className={styles.accentLine}></span>
               </h1>
               <p className={styles.lede}>
-                24+ years of financial leadership—from Fortune 500 corporate
-                finance to successfully buying, scaling, and selling a
-                professional services firm. Now bringing strategic CFO-level
-                insight to Indianapolis businesses that need more than basic
-                accounting.
+                With more than 24 years of financial leadership experience—from
+                Fortune 500 corporate finance to buying, scaling, and
+                successfully selling a professional services firm—Scott brings
+                seasoned judgment and practical perspective to small businesses
+                that need more than basic accounting.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Story */}
       {/* Story */}
       <section
         className={`${styles.story} ${
@@ -97,7 +96,7 @@ export default function AboutPage() {
             {/* LEFT column: text */}
             <div className={styles.storyText}>
               <h2 className={styles.h2}>
-                Experience That Goes Beyond Tax Returns
+                Experience That Goes Beyond the Numbers
               </h2>
 
               <p className={styles.body}>
@@ -108,21 +107,21 @@ export default function AboutPage() {
               </p>
 
               <p className={styles.body}>
-                With more than two decades of experience, Scott&apos;s background
-                spans public accounting, banking, government finance, nonprofit
-                leadership, and executive-level CFO roles. He previously owned
-                and operated a successful CPA firm for nearly a decade before
-                selling it in 2019, and he continues to bring a strategic,
-                forward-looking mindset to every client relationship.
+                With more than two decades of experience, Scott&apos;s
+                background spans public accounting, banking, government finance,
+                nonprofit leadership, and executive-level CFO roles. He
+                previously owned and operated a successful CPA firm for nearly a
+                decade before selling it in 2019, and he continues to bring a
+                strategic, forward-looking mindset to every client relationship.
               </p>
 
               <p className={styles.body}>
-                Scott&apos;s values were shaped early in life by growing up around
-                his father, Rocky Geans, who owned and operated a successful
-                construction company. Watching his father lead a business built
-                on hard work, honesty, and clear communication left a lasting
-                impression and continues to guide how Scott serves his clients
-                today.
+                Scott&apos;s values were shaped early in life by growing up
+                around his father, Rocky Geans, who owned and operated a
+                successful construction company. Watching his father lead a
+                business built on hard work, honesty, and clear communication
+                left a lasting impression and continues to guide how Scott
+                serves his clients today.
               </p>
               <p className={styles.body}>
                 SMG Accounting & Tax Advisors is a family endeavor in the truest

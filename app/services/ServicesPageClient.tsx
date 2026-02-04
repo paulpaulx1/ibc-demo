@@ -5,11 +5,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   CheckCircle,
+  BookOpen,
   Calculator,
-  FileText,
+  Users,
+  FileCheck,
   TrendingUp,
-  Activity,
-  Briefcase,
+  Wrench,
 } from "lucide-react";
 import styles from "./ServicesPage.module.css";
 
@@ -55,7 +56,7 @@ export default function ServicesPageClient() {
       <section className={styles.hero}>
         <Image
           src="/services/bookkeeping/bookkeeping.jpg"
-          alt="Indianapolis accounting and bookkeeping services"
+          alt="Professional accounting services"
           fill
           className={styles.bgImage}
           priority
@@ -64,89 +65,19 @@ export default function ServicesPageClient() {
         <div className="container">
           <div className={styles.heroInner}>
             <h1 className={styles.h1}>
-              Professional Accounting & CPA Services in Indianapolis
+              Our Services
             </h1>
             <p className={styles.lede}>
-              Based in Indianapolis and serving businesses
-              nationwide—comprehensive financial management from accounting and
-              bookkeeping to strategic CFO services and healthcare finance
-              advisory, backed by 24+ years of CPA experience.
+              Bookkeeping, accounting, payroll, and tax services for small businesses. Clear financials, proactive tax planning, and experienced guidance—designed to support long-term clarity and confidence.
             </p>
-            <a href="contact" className={styles.primaryCta}>
+            <a href="/contact" className={styles.primaryCta}>
               Schedule a Consultation
             </a>
           </div>
         </div>
       </section>
 
-      {/* Accounting Services - TEXT LEFT | IMAGE RIGHT */}
-      <section
-        id="accounting"
-        className={`${styles.service} ${
-          visibleSections.has("accounting") ? styles.visible : ""
-        }`}
-        ref={setSectionRef("accounting")}
-      >
-        <div className="container">
-          <div className={styles.serviceGrid}>
-            <div className={styles.serviceContent}>
-              <div className={styles.serviceIcon}>
-                <Calculator size={40} />
-              </div>
-              <h2 className={styles.h2}>Accounting Services</h2>
-              <p className={styles.body}>
-                As one of the best Indianapolis accountant firms businesses rely
-                on, we provide comprehensive accounting solutions for small
-                businesses and nonprofits—from financial statement preparation
-                to multi-entity management and regulatory compliance. Serving
-                clients across Indiana and nationwide, we deliver accurate,
-                timely financial reporting that supports informed
-                decision-making and regulatory requirements.
-              </p>
-              <p className={styles.body}>
-                Our accounting services are designed for growing organizations
-                that need more than basic transaction recording—businesses and
-                nonprofits that value accuracy, strategic insight, and
-                professional financial oversight from a top tax accountant
-                Indianapolis companies trust.
-              </p>
-              <ul className={styles.serviceList}>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Financial statement preparation and analysis</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Multi-entity consolidated reporting</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Regulatory compliance and reporting</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Nonprofit fund accounting</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Internal controls assessment and improvement</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className={styles.serviceImage}>
-              <Image
-                src="/services/services-accounting.jpg"
-                alt="Indianapolis accounting firm providing professional CPA services"
-                fill
-                className={styles.serviceImg}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bookkeeping - IMAGE LEFT | TEXT RIGHT */}
+      {/* Monthly Bookkeeping - TEXT LEFT | IMAGE RIGHT */}
       <section
         id="bookkeeping"
         className={`${styles.service} ${
@@ -156,44 +87,25 @@ export default function ServicesPageClient() {
       >
         <div className="container">
           <div className={styles.serviceGrid}>
-            <div className={styles.serviceImage}>
-              <Image
-                src="/services/services-bookkeeping.jpg"
-                alt="Indianapolis bookkeeping services with CPA oversight"
-                fill
-                className={styles.serviceImg}
-              />
-            </div>
-
             <div className={styles.serviceContent}>
               <div className={styles.serviceIcon}>
-                <FileText size={40} />
+                <BookOpen size={40} />
               </div>
-              <h2 className={styles.h2}>Bookkeeping Services</h2>
+              <h2 className={styles.h2}>Monthly Bookkeeping</h2>
               <p className={styles.body}>
-                Professional Indianapolis bookkeeping services with CPA
-                oversight—accurate reconciliation, organized records, and
-                financial clarity for confident decision-making. As an
-                experienced Indianapolis bookkeeper serving businesses
-                nationwide, we take the administrative burden off your plate
-                while ensuring your books are accurate, current, and
-                audit-ready.
+                Accurate, organized bookkeeping that provides a reliable financial foundation for your business. We manage day-to-day transaction recording, reconciliations, and reporting so your financial records remain current, consistent, and audit-ready.
               </p>
               <p className={styles.body}>
-                Whether you're transitioning from spreadsheets, managing
-                multiple entities, or need consistent monthly close processes,
-                our bookkeeping Indianapolis clients rely on provides the
-                reliable foundation that supports business growth and financial
-                planning needs.
+                Whether you're transitioning from spreadsheets or need consistent monthly close processes, our bookkeeping provides the reliable foundation that supports business growth and financial planning needs.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Monthly reconciliation and financial close</span>
+                  <span>Monthly bank and credit card reconciliations</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>QuickBooks setup, cleanup, and management</span>
+                  <span>Transaction classification and general ledger maintenance</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
@@ -201,11 +113,81 @@ export default function ServicesPageClient() {
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Clear monthly financial statements</span>
+                  <span>Clean, timely monthly financial reports</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Multi-entity bookkeeping coordination</span>
+                  <span>QuickBooks setup, cleanup, and ongoing support</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className={styles.serviceImage}>
+              <Image
+                src="/services/services-bookkeeping.jpg"
+                alt="Monthly bookkeeping services"
+                fill
+                className={styles.serviceImg}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Monthly Accounting - IMAGE LEFT | TEXT RIGHT */}
+      <section
+        id="accounting"
+        className={`${styles.service} ${
+          visibleSections.has("accounting") ? styles.visible : ""
+        }`}
+        ref={setSectionRef("accounting")}
+      >
+        <div className="container">
+          <div className={styles.serviceGrid}>
+            <div className={styles.serviceImage}>
+              <Image
+                src="/services/services-accounting.jpg"
+                alt="CPA-level accounting services"
+                fill
+                className={styles.serviceImg}
+              />
+            </div>
+
+            <div className={styles.serviceContent}>
+              <div className={styles.serviceIcon}>
+                <Calculator size={40} />
+              </div>
+              <h2 className={styles.h2}>Monthly Accounting</h2>
+              <p className={styles.body}>
+                CPA-level accounting oversight that goes beyond bookkeeping—ensuring your financials are accurate, compliant, and decision-ready. Designed for businesses that need more than transaction processing.
+              </p>
+              <p className={styles.body}>
+                We provide comprehensive accounting solutions—from financial statement preparation to multi-entity management—that support informed decision-making and regulatory requirements.
+              </p>
+              <ul className={styles.serviceList}>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>CPA-prepared financial statements</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Monthly close and adjusting entries</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Financial review and variance analysis</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Multi-entity and consolidated reporting</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Internal controls assessment and improvement</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Monthly meetings to discuss financial statements</span>
                 </li>
               </ul>
             </div>
@@ -213,7 +195,64 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
-      {/* Tax Planning - TEXT LEFT | IMAGE RIGHT */}
+      {/* Payroll - TEXT LEFT | IMAGE RIGHT */}
+      <section
+        id="payroll"
+        className={`${styles.service} ${
+          visibleSections.has("payroll") ? styles.visible : ""
+        }`}
+        ref={setSectionRef("payroll")}
+      >
+        <div className="container">
+          <div className={styles.serviceGrid}>
+            <div className={styles.serviceContent}>
+              <div className={styles.serviceIcon}>
+                <Users size={40} />
+              </div>
+              <h2 className={styles.h2}>Payroll Administration Support</h2>
+              <p className={styles.body}>
+                Payroll coordination and oversight that ensures accuracy, compliance, and consistency—without the administrative burden. We manage the payroll process while you retain control over payroll providers and processing fees.
+              </p>
+              <p className={styles.body}>
+                Our payroll support provides peace of mind that payroll taxes, deductions, and reporting are handled correctly and on time, every time.
+              </p>
+              <ul className={styles.serviceList}>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Payroll account setup and coordination (ADP, Gusto, QBO, etc.)</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Review and reconciliation of payroll reports</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Payroll tax and liability account reconciliation</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>PTO, benefit, and deduction tracking support</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Ongoing payroll process guidance and troubleshooting</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className={styles.serviceImage}>
+              <Image
+                src="/services/services-taxpreparation.jpg"
+                alt="Payroll administration support"
+                fill
+                className={styles.serviceImg}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tax Planning - IMAGE LEFT | TEXT RIGHT */}
       <section
         id="tax-planning"
         className={`${styles.service} ${
@@ -223,34 +262,30 @@ export default function ServicesPageClient() {
       >
         <div className="container">
           <div className={styles.serviceGrid}>
+            <div className={styles.serviceImage}>
+              <Image
+                src="/services/services-taxpreparation.jpg"
+                alt="Income tax preparation and planning"
+                fill
+                className={styles.serviceImg}
+              />
+            </div>
+
             <div className={styles.serviceContent}>
               <div className={styles.serviceIcon}>
-                <FileText size={40} />
+                <FileCheck size={40} />
               </div>
-              <h2 className={styles.h2}>Tax Preparation & Planning</h2>
+              <h2 className={styles.h2}>Income Tax Preparation & Planning</h2>
               <p className={styles.body}>
-                Strategic tax planning and preparation for individuals,
-                businesses, and nonprofits—minimizing liability while ensuring
-                full federal and state compliance. Small businesses turn to us
-                as their tax accountant for more than annual filing—we provide
-                year-round strategic guidance on entity structure, major
-                transactions, and tax optimization strategies.
+                Strategic tax planning and compliant preparation for individuals and businesses—focused on minimizing liability while avoiding surprises.
               </p>
               <p className={styles.body}>
-                With deep experience in corporate, individual, and nonprofit tax
-                strategy, we're known as one of the best tax accountants in
-                Indianapolis for navigating complex tax situations while
-                identifying opportunities for strategic savings and multi-state
-                compliance.
+                We provide year-round strategic guidance on entity structure, major transactions, and tax optimization strategies—not just annual filing.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Business and individual tax preparation</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Corporate and nonprofit tax strategy</span>
+                  <span>Business and individual income tax preparation</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
@@ -258,64 +293,42 @@ export default function ServicesPageClient() {
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Entity structure optimization</span>
+                  <span>Entity structure and tax comparison</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Multi-state tax compliance</span>
+                  <span>Multi-state and multi-entity tax compliance</span>
+                </li>
+                <li className={styles.serviceItem}>
+                  <CheckCircle className={styles.checkIcon} />
+                  <span>Year-round tax strategy and advisory support</span>
                 </li>
               </ul>
-            </div>
-
-            <div className={styles.serviceImage}>
-              <Image
-                src="/services/services-taxpreparation.jpg"
-                alt="Indianapolis tax accountant providing tax preparation and planning"
-                fill
-                className={styles.serviceImg}
-              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CFO Services - IMAGE LEFT | TEXT RIGHT */}
+      {/* Fractional CFO - TEXT LEFT | IMAGE RIGHT */}
       <section
-        id="cfo-services"
+        id="cfo"
         className={`${styles.service} ${
-          visibleSections.has("cfo-services") ? styles.visible : ""
+          visibleSections.has("cfo") ? styles.visible : ""
         }`}
-        ref={setSectionRef("cfo-services")}
+        ref={setSectionRef("cfo")}
       >
         <div className="container">
           <div className={styles.serviceGrid}>
-            <div className={styles.serviceImage}>
-              <Image
-                src="/services/services-CFO.jpg"
-                alt="CFO and financial strategy services"
-                fill
-                className={styles.serviceImg}
-              />
-            </div>
-
             <div className={styles.serviceContent}>
               <div className={styles.serviceIcon}>
                 <TrendingUp size={40} />
               </div>
-              <h2 className={styles.h2}>CFO & Financial Strategy</h2>
+              <h2 className={styles.h2}>Fractional CFO Support</h2>
               <p className={styles.body}>
-                Fractional CFO services and strategic financial guidance for
-                growing organizations—executive-level guidance, forecasting, and
-                capital planning without the full-time cost. We provide the
-                financial leadership that positions your business for
-                sustainable growth and informed strategic decision-making.
+                Experienced financial leadership without the cost of a full-time hire. We partner with owners and leadership teams to provide strategic insight, forecasting, and decision support.
               </p>
               <p className={styles.body}>
-                With 24+ years of financial leadership experience including
-                multi-entity operations, healthcare finance, and successful
-                business exits, we bring CFO-level insight to budgeting,
-                forecasting, capital planning, and strategic financial
-                management.
+                With decades of financial leadership experience, we bring CFO-level insight to budgeting, forecasting, capital planning, and strategic financial management.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
@@ -324,7 +337,7 @@ export default function ServicesPageClient() {
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Budget development and variance analysis</span>
+                  <span>Budget development and performance monitoring</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
@@ -332,76 +345,23 @@ export default function ServicesPageClient() {
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Board and investor reporting</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
                   <span>Strategic planning and capital allocation</span>
                 </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Healthcare Finance Advisory - TEXT LEFT | IMAGE RIGHT */}
-      <section
-        id="healthcare-finance"
-        className={`${styles.service} ${
-          visibleSections.has("healthcare-finance") ? styles.visible : ""
-        }`}
-        ref={setSectionRef("healthcare-finance")}
-      >
-        <div className="container">
-          <div className={styles.serviceGrid}>
-            <div className={styles.serviceContent}>
-              <div className={styles.serviceIcon}>
-                <Activity size={40} />
-              </div>
-              <h2 className={styles.h2}>Healthcare Finance Advisory</h2>
-              <p className={styles.body}>
-                Specialized financial leadership for behavioral health and
-                healthcare organizations—CARF compliance, payor contract
-                analysis, and regulatory expertise. We understand the unique
-                financial and operational challenges of healthcare
-                organizations, particularly in behavioral health and
-                professionals monitoring programs.
-              </p>
-              <p className={styles.body}>
-                Drawing on experience as CFO for a behavioral health
-                organization managing rapid growth, state-funded program
-                development, and complex payor relationships, we provide the
-                strategic financial guidance that supports quality care delivery
-                in highly regulated environments.
-              </p>
-              <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>CARF accreditation financial compliance</span>
+                  <span>Contract negotiation support</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Payor contract negotiation and analysis</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>State-funded program financial management</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Healthcare-specific reporting and budgeting</span>
-                </li>
-                <li className={styles.serviceItem}>
-                  <CheckCircle className={styles.checkIcon} />
-                  <span>Nonprofit healthcare division financial oversight</span>
+                  <span>Internal controls and standard operating procedures support</span>
                 </li>
               </ul>
             </div>
 
             <div className={styles.serviceImage}>
               <Image
-                src="/services/services-healthcare.jpg"
-                alt="Healthcare finance advisory services"
+                src="/services/services-CFO.jpg"
+                alt="Fractional CFO support"
                 fill
                 className={styles.serviceImg}
               />
@@ -410,20 +370,20 @@ export default function ServicesPageClient() {
         </div>
       </section>
 
-      {/* Business Advisory & M&A - IMAGE LEFT | TEXT RIGHT */}
+      {/* Cleanup - IMAGE LEFT | TEXT RIGHT */}
       <section
-        id="business-advisory"
+        id="cleanup"
         className={`${styles.service} ${
-          visibleSections.has("business-advisory") ? styles.visible : ""
+          visibleSections.has("cleanup") ? styles.visible : ""
         }`}
-        ref={setSectionRef("business-advisory")}
+        ref={setSectionRef("cleanup")}
       >
         <div className="container">
           <div className={styles.serviceGrid}>
             <div className={styles.serviceImage}>
               <Image
                 src="/services/services-business.jpg"
-                alt="Business advisory and M&A services"
+                alt="Books and financial statement cleanup"
                 fill
                 className={styles.serviceImg}
               />
@@ -431,43 +391,35 @@ export default function ServicesPageClient() {
 
             <div className={styles.serviceContent}>
               <div className={styles.serviceIcon}>
-                <Briefcase size={40} />
+                <Wrench size={40} />
               </div>
-              <h2 className={styles.h2}>Business Advisory & M&A</h2>
+              <h2 className={styles.h2}>Books & Financial Statement Cleanup</h2>
               <p className={styles.body}>
-                Strategic guidance for business transitions, acquisitions, and
-                exits—informed by real experience buying, scaling, and
-                successfully selling a professional services firm. We provide
-                the financial insight and strategic planning that helps business
-                owners navigate critical transitions and position their
-                companies for sustainable growth.
+                One-time or short-term engagements designed to correct historical issues, organize financial records, and restore confidence in your financial statements.
               </p>
               <p className={styles.body}>
-                From entity structure selection and growth strategy to exit
-                planning and M&A due diligence, we bring practical,
-                experience-based guidance to business owners facing major
-                strategic decisions.
+                This service is ideal for businesses transitioning to professional accounting support, preparing for tax filings, financing, or ongoing advisory services.
               </p>
               <ul className={styles.serviceList}>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Business acquisition due diligence and strategy</span>
+                  <span>Historical transaction review and corrections</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Exit planning and business valuation</span>
+                  <span>General ledger cleanup and reclassification</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Growth strategy and financial planning</span>
+                  <span>Reconciliation of bank, credit card, and loan accounts</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>Entity structure optimization</span>
+                  <span>Correction of prior-period financial statements</span>
                 </li>
                 <li className={styles.serviceItem}>
                   <CheckCircle className={styles.checkIcon} />
-                  <span>M&A transaction support and integration</span>
+                  <span>Alignment of books with tax returns and payroll records</span>
                 </li>
               </ul>
             </div>
@@ -520,7 +472,7 @@ export default function ServicesPageClient() {
               Let's discuss which services can best support your business goals
               and financial needs.
             </p>
-            <a href="contact" className={styles.ctaButton}>
+            <a href="/contact" className={styles.ctaButton}>
               Schedule a Free Consultation
             </a>
           </div>

@@ -35,15 +35,14 @@ export default function Hero() {
         <h1
           className={`${styles.heroHeading} font-serif text-4xl md:text-5xl leading-tight mb-6`}
         >
-          Accounting, tax, and bookkeeping for small businesses and nonprofits.
+          Bookkeeping, accounting, payroll, and tax services for small businesses.
           <span className={`${styles.heroAccent} block mt-4`} />
         </h1>
 
         <p
           className={`${styles.heroSubheading} text-lg text-slate-200 mb-10 max-w-xl`}
         >
-          Clear reporting, proactive tax planning, and steady financial
-          guidance— grounded in integrity and long-term stewardship.
+          Clear financials, proactive tax planning, and experienced guidance—designed to support long-term clarity and confidence.
         </p>
 
         <div className={`${styles.heroCtas} flex gap-6 flex-wrap`}>

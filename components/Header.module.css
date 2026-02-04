@@ -137,8 +137,6 @@
     box-shadow: 0 4px 10px rgba(178, 165, 116, 0.25);
 }
 
-f
-
 /* Button when scrolled (white header) */
 .buttonScrolled {
     background: white;
@@ -180,4 +178,32 @@ header.scrolled button:focus-visible {
 
 .serviceChevron {
     color: var(--accent);
+}
+
+.headerContainer {
+    max-width: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media (min-width: 640px) {
+    .headerContainer {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .headerContainer {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 870px) {
+    .button {
+        max-width: 140px;
+        white-space: normal;
+        line-height: 1.3;
+    }
 }

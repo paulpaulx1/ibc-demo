@@ -3,15 +3,15 @@ import { Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import styles from "./Footer.module.css";
 
 const servicesLinks = [
-  { title: "Accounting Services", href: "/services#accounting" },
-  { title: "Bookkeeping Services", href: "/services#bookkeeping" },
-  { title: "Tax Preparation & Planning", href: "/services#tax-planning" },
-  { title: "CFO & Financial Strategy", href: "/services#cfo-services" },
+  { title: "Monthly Bookkeeping", href: "/services#bookkeeping" },
+  { title: "Monthly Accounting", href: "/services#accounting" },
+  { title: "Payroll Administration Support", href: "/services#payroll" },
   {
-    title: "Healthcare Finance Advisory",
-    href: "/services#healthcare-finance",
+    title: "Income Tax Preparation & Planning",
+    href: "/services#tax-planning",
   },
-  { title: "Business Advisory & M&A", href: "/services#business-advisory" },
+  { title: "Fractional CFO Support", href: "/services#cfo" },
+  { title: "Books & Financial Statement Cleanup", href: "/services#cleanup" },
 ];
 
 export default function Footer() {
@@ -116,11 +116,6 @@ export default function Footer() {
               © {new Date().getFullYear()} SMG Accounting &amp; Tax Advisors,
               LLC. All rights reserved.
             </p>
-
-            <blockquote className={styles.scripture}>
-              “Whatever you do, work heartily, as for the Lord and not for men.”
-              <span className={styles.scriptureRef}>— Colossians 3:23</span>
-            </blockquote>
           </div>
         </div>
       </div>

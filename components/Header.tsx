@@ -7,15 +7,15 @@ import { ChevronDown } from "lucide-react";
 import styles from "./Header.module.css";
 
 const servicesLinks = [
-  { title: "Accounting Services", href: "/services#accounting" },
-  { title: "Bookkeeping Services", href: "/services#bookkeeping" },
-  { title: "Tax Preparation & Planning", href: "/services#tax-planning" },
-  { title: "CFO & Financial Planning", href: "/services#cfo-services" },
+  { title: "Monthly Bookkeeping", href: "/services#bookkeeping" },
+  { title: "Monthly Accounting", href: "/services#accounting" },
+  { title: "Payroll Administration Support", href: "/services#payroll" },
   {
-    title: "Healthcare Finance Advisory",
-    href: "/services#healthcare-finance",
+    title: "Income Tax Preparation & Planning",
+    href: "/services#tax-planning",
   },
-  { title: "Business Advisory & M&A", href: "/services#business-advisory" },
+  { title: "Fractional CFO Support", href: "/services#cfo" },
+  { title: "Books & Financial Statement Cleanup", href: "/services#cleanup" },
 ];
 
 export default function Header() {
@@ -41,13 +41,18 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 min-h-[154px] flex items-center ${
         scrolled ? "bg-white/90 backdrop-blur-sm shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between py-4 md:py-5">
+      <div
+        className={`${styles.headerContainer} container flex items-center justify-between`}
+      >
         {/* Brand */}
-        <a href="/" className={`block h-32 relative ${styles.logo}`}>
+        <a
+          href="/"
+          className={`block relative ${styles.logo} shrink-0 h-24 md:h-20 lg:h-24 xl:h-28`}
+        >
           {/* White logo for transparent header */}
           <Image
             src="/SMG Full Logo1.png"
@@ -75,7 +80,7 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav
-          className={`hidden md:flex items-center gap-8 font-medium transition-colors duration-300 ${
+          className={`hidden md:flex items-center gap-4 lg:gap-8 font-medium transition-colors duration-300 ${
             scrolled ? "text-slate-700" : "text-white"
           }`}
         >
@@ -106,7 +111,9 @@ export default function Header() {
                   <a
                     key={service.title}
                     href={service.href}
-                    className={`block px-4 py-2.5 text-slate-700 hover:bg-gray-50 text-sm ${styles.dropdownItem} ${
+                    className={`block px-4 py-2.5 text-slate-700 hover:bg-gray-50 text-sm ${
+                      styles.dropdownItem
+                    } ${
                       index !== servicesLinks.length - 1
                         ? "border-b border-[#b2a574]/20"
                         : ""
@@ -124,6 +131,20 @@ export default function Header() {
             className={`hover:underline underline-offset-4 decoration-[#b2a574] ${styles.navItem}`}
           >
             About
+          </a>
+
+          <a
+            href="/values"
+            className={`hover:underline underline-offset-4 decoration-[#b2a574] ${styles.navItem}`}
+          >
+            Values
+          </a>
+
+          <a
+            href="/pricing"
+            className={`hover:underline underline-offset-4 decoration-[#b2a574] ${styles.navItem}`}
+          >
+            Pricing
           </a>
 
           <a
@@ -202,6 +223,22 @@ export default function Header() {
               className={styles.mobileMenuItem}
             >
               About
+            </a>
+
+            <a
+              href="/values"
+              onClick={() => setOpen(false)}
+              className={styles.mobileMenuItem}
+            >
+              Values
+            </a>
+
+            <a
+              href="/pricing"
+              onClick={() => setOpen(false)}
+              className={styles.mobileMenuItem}
+            >
+              Pricing
             </a>
 
             <a
