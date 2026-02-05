@@ -41,12 +41,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 min-h-[154px] flex items-center ${
-        scrolled ? "bg-white/90 backdrop-blur-sm shadow-sm" : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled || open ? "bg-white/90 backdrop-blur-sm shadow-sm" : "bg-transparent"
       }`}
     >
       <div
-        className={`${styles.headerContainer} container flex items-center justify-between`}
+        className={`${styles.headerContainer} container flex items-center justify-between min-h-[154px]`}
       >
         {/* Brand */}
         <a
@@ -60,7 +60,7 @@ export default function Header() {
             height={32}
             width={200}
             className={`h-full w-auto transition-opacity duration-300 ${
-              scrolled ? "opacity-0" : "opacity-100"
+              scrolled || open ? "opacity-0" : "opacity-100"
             }`}
             priority
           />
@@ -72,7 +72,7 @@ export default function Header() {
             height={32}
             width={200}
             className={`h-full w-auto absolute top-0 left-0 transition-opacity duration-300 ${
-              scrolled ? "opacity-100" : "opacity-0"
+              scrolled || open ? "opacity-100" : "opacity-0"
             }`}
             priority
           />
@@ -170,8 +170,8 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className={`md:hidden border rounded-md p-2 transition-colors ${
-            scrolled ? "border-navy text-navy" : "border-white text-white"
+          className={`md:hidden border rounded-md p-2 transition-colors relative z-[60] ${
+            scrolled || open ? "border-navy text-navy" : "border-white text-white"
           }`}
           aria-label="Toggle menu"
         >
@@ -182,7 +182,7 @@ export default function Header() {
       {/* Mobile menu */}
       {open && (
         <div
-          className={`md:hidden bg-white text-navy border-t border-gray-200 shadow-sm ${styles.mobileMenu}`}
+          className={`md:hidden absolute top-full left-0 right-0 bg-white text-navy border-t border-gray-200 shadow-sm ${styles.mobileMenu}`}
         >
           <nav className="flex flex-col items-start px-6 py-4 space-y-3">
             {/* Mobile Services Dropdown */}
