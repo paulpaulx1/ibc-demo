@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Libre_Baskerville } from "next/font/google";
-import GoogleAnalytics from "./GoogleAnalytics";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const baskerville = Libre_Baskerville({
