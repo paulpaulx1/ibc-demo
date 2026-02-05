@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Libre_Baskerville } from "next/font/google";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const baskerville = Libre_Baskerville({
@@ -38,6 +39,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${baskerville.variable}`}>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className="bg-white text-ink">{children}</body>
     </html>
   );
