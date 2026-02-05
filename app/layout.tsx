@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Libre_Baskerville } from "next/font/google";
-import GoogleAnalytics from "../components/GoogleAnalytics";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const baskerville = Libre_Baskerville({
@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Trusted CPA Firm for Small Businesses",
   description:
     "Leading accounting firm in Indianapolis offering tax preparation, bookkeeping services, and CFO advisory. SMG serves small businesses, nonprofits, and healthcare organizations throughout Indianapolis, Indiana with expert CPA guidance.",
+  verification: {
+    google: "5lZNlyTwBjiepCFdbcuimZyg_Af4Ug4yRpryntcXmaw",
+  },
   openGraph: {
     title:
       "Indianapolis Accounting Firm | Tax, Bookkeeping & CFO Services | SMG",
