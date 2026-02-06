@@ -1,18 +1,23 @@
+import Image from 'next/image';
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
     <section
-      className={`${styles.hero} relative min-h-[80vh] flex items-center justify-start text-white bg-cover`}
+      className={`${styles.hero} relative min-h-[80vh] flex items-center justify-start text-white`}
     >
-      {/* Background image */}
-      <div
-        className={`${styles.heroBackground} absolute inset-0 bg-cover`}
-        style={{
-          backgroundImage: "url('/hero-image.jpg')",
-          backgroundPosition: "60px center",
-        }}
-      />
+      {/* Optimized background image */}
+      <div className={`${styles.heroBackground} absolute inset-0`}>
+        <Image
+          src="/hero-image.jpg"
+          alt=""
+          fill
+          priority
+          quality={85}
+          className="object-cover object-[60px_center]"
+          sizes="100vw"
+        />
+      </div>
 
       {/* ORIGINAL gradient overlay – unchanged */}
       <div
