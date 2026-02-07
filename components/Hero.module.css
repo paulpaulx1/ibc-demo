@@ -229,3 +229,24 @@
         animation: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .heroHeading {
+        font-size: 28px; /* Even smaller - was 32px */
+        line-height: 1.2;
+        margin-bottom: 1rem; /* Add explicit margin */
+    }
+    
+    .heroSubheading {
+        font-size: 16px; /* Slightly smaller */
+        margin-bottom: 2rem; /* Increased from 10px to give CTAs space */
+    }
+
+    .heroText {
+        padding-bottom: 3rem; /* Ensure bottom spacing */
+    }
+
+    .heroCtas {
+        gap: 1rem; /* Tighter gap on mobile */
+    }
+}
