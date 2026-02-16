@@ -34,7 +34,7 @@ export async function POST(request) {
     }
 
     const transporter = createTransporter();
-    const DESTINATION = "scott@smgcpafirm.com";
+    const DESTINATION = "scott@smgcpafirm.com, andrea@smgcpafirm.com";
 
     const emailHtml = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
