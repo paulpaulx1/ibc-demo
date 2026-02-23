@@ -13,7 +13,7 @@ const baskerville = Libre_Baskerville({
 export const metadata: Metadata = {
   metadataBase: new URL("https://smgcpafirm.com"),
   alternates: {
-    canonical: "https://smgcpafirm.com",
+    canonical: "https://www.smgcpafirm.com",
   },
   title: "Trusted CPA Firm for Small Businesses",
 

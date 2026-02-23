@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Federal and Indiana state tax resources, payment portals, business links, and key 2026 tax deadlines for small business owners in Indianapolis.",
   alternates: {
-    canonical: "https://smgcpafirm.com/resources",
+    canonical: "https://www.smgcpafirm.com/resources",
   },
 };
 

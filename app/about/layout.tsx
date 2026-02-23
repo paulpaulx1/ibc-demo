@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Meet Scott Geans, CPA — 24+ years of financial leadership experience spanning Fortune 500 finance, CFO roles, and small business ownership. Serving Indianapolis small businesses with expert accounting and advisory.",
   alternates: {
-    canonical: "https://smgcpafirm.com/about",
+    canonical: "https://www.smgcpafirm.com/about",
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Transparent flat-rate pricing for bookkeeping, accounting, and fractional CFO services. No hourly billing or surprise invoices—just clear monthly retainers for Indianapolis small businesses.",
   alternates: {
-    canonical: "https://smgcpafirm.com/pricing",
+    canonical: "https://www.smgcpafirm.com/pricing",
   },
 };
 
