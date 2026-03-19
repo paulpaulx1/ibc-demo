@@ -18,6 +18,12 @@ const servicesLinks = [
   { title: "Books & Financial Statement Cleanup", href: "/services#cleanup" },
 ];
 
+const pricingLinks = [
+  { title: "Pricing Philosophy", href: "/pricing#philosophy" },
+  { title: "Accounting Services", href: "/pricing#tiers" },
+  { title: "Tax Preparation", href: "/pricing#tax-preparation" },
+];
+
 export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
@@ -25,6 +31,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [pricingOpen, setPricingOpen] = useState(false);
 
   // Only listen for scroll on homepage
   useEffect(() => {
@@ -126,6 +133,47 @@ export default function Header() {
             )}
           </div>
 
+          <div
+            className={`relative ${styles.navItem}`}
+            onMouseEnter={() => setPricingOpen(true)}
+            onMouseLeave={() => setPricingOpen(false)}
+          >
+            <a
+              href="/pricing"
+              className="flex items-center gap-1 hover:underline underline-offset-4 decoration-[#b2a574] cursor-pointer"
+            >
+              Pricing
+              <ChevronDown
+                size={16}
+                className={`${styles.serviceChevron} transition-transform ${
+                  pricingOpen ? "rotate-180" : ""
+                }`}
+              />
+            </a>
+
+            {pricingOpen && (
+              <div
+                className={`absolute top-full left-0 w-56 mt-3 rounded-lg shadow-xl bg-white border border-gray-200 py-2 ${styles.dropdown}`}
+              >
+                {pricingLinks.map((link, index) => (
+                  <a
+                    key={link.title}
+                    href={link.href}
+                    className={`block px-4 py-2.5 text-slate-700 hover:bg-gray-50 text-sm ${
+                      styles.dropdownItem
+                    } ${
+                      index !== pricingLinks.length - 1
+                        ? "border-b border-[#b2a574]/20"
+                        : ""
+                    }`}
+                  >
+                    {link.title}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
           <a
             href="/about"
             className={`hover:underline underline-offset-4 decoration-[#b2a574] ${styles.navItem}`}
@@ -140,12 +188,8 @@ export default function Header() {
             Values
           </a>
 
-          <a
-            href="/pricing"
-            className={`hover:underline underline-offset-4 decoration-[#b2a574] ${styles.navItem}`}
-          >
-            Pricing
-          </a>
+          {/* Pricing Dropdown */}
+          
 
           <a
             href="/resources"
@@ -233,13 +277,37 @@ export default function Header() {
               Values
             </a>
 
-            <a
-              href="/pricing"
-              onClick={() => setOpen(false)}
-              className={styles.mobileMenuItem}
-            >
-              Pricing
-            </a>
+            {/* Mobile Pricing Dropdown */}
+            <div className={`w-full ${styles.mobileMenuItem}`}>
+              <button
+                type="button"
+                onClick={() => setPricingOpen(!pricingOpen)}
+                className="flex items-center gap-1 w-full"
+              >
+                Pricing
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform ${
+                    pricingOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {pricingOpen && (
+                <div className="pl-4 mt-2 space-y-2">
+                  {pricingLinks.map((link) => (
+                    <a
+                      key={link.title}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block text-sm opacity-80 hover:opacity-100 transition-opacity"
+                    >
+                      {link.title}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <a
               href="/resources"
