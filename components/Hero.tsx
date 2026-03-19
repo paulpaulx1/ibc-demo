@@ -40,7 +40,7 @@ export default function Hero() {
         <h1
           className={`${styles.heroHeading} font-serif text-4xl md:text-5xl leading-tight mb-6`}
         >
-          Bookkeeping, accounting, payroll, and tax services for small businesses.
+          Accounting, advisory, and tax services for small businesses and individuals.
           <span className={`${styles.heroAccent} block mt-4`} />
         </h1>
 

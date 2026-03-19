@@ -20,7 +20,7 @@ const servicesLinks = [
 
 const pricingLinks = [
   { title: "Pricing Philosophy", href: "/pricing#philosophy" },
-  { title: "Accounting Services", href: "/pricing#tiers" },
+  { title: "Accounting & Advisory Services", href: "/pricing#tiers" },
   { title: "Tax Preparation", href: "/pricing#tax-preparation" },
 ];
 

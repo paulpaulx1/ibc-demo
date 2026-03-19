@@ -101,7 +101,7 @@ export default function ServicesGrid() {
               isVisible ? styles.subheadingVisible : styles.subheading
             }`}
           >
-            Bookkeeping, accounting, payroll, and tax services for small businesses.
+            Accounting, advisory, and tax services for small businesses and individuals.
           </p>
         </div>
 
