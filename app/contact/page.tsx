@@ -5,6 +5,8 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import styles from "./Contact.module.css";
 
 export default function ContactPage() {
+  const [honeypot, setHoneypot] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,6 +44,18 @@ export default function ContactPage() {
 
       if (!response.ok) {
         throw new Error("Failed to send message");
+      }
+
+      if (honeypot) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+        return;
       }
 
       setStatus("success");
@@ -180,6 +194,17 @@ export default function ContactPage() {
                     className={styles.textarea}
                   />
                 </div>
+
+                <input
+                  type="text"
+                  name="website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
 
                 <button
                   type="submit"

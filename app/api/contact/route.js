@@ -23,7 +23,11 @@ function createTransporter() {
 
 export async function POST(request) {
   try {
-    const { name, email, phone, company, message } = await request.json();
+    const { name, email, phone, company, message, website } = req.body;
+
+    if (website) {
+      return res.status(200).json({ success: true });
+    }
 
     // Basic validation
     if (!name || !email || !message) {
